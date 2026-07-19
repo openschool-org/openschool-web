@@ -153,8 +153,9 @@ export default function Home(): React.ReactElement {
                 <p className={styles.aboutText}>
                   Most schools still track students, grades, and attendance across paper
                   registers and disconnected spreadsheets. OpenSchool gives every school a
-                  structured, secure, API-driven system of record - modeled around local grades,
-                  A/L streams, and the people who keep a school running.
+                  structured, secure, API-driven system of record - modeled around the full
+                  Grade 1-13 flow, from Scholarship years through O/Level and A/Level streams,
+                  and the people who keep a school running.
                 </p>
                 <Link className={styles.aboutLink} to="/about">
                   Learn more about our mission

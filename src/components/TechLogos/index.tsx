@@ -8,6 +8,7 @@ const LOGOS = [
   {key: 'swagger', label: 'Swagger / OpenAPI', src: 'img/tech/swagger-logo.png'},
   {key: 'json', label: 'JSON', src: 'img/tech/JSON_vector_logo.png'},
   {key: 'webhook', label: 'Webhooks', src: 'img/tech/webhook.png'},
+  {key: 'asgardeo', label: 'Asgardeo', src: 'img/tech/asgardeo-logo.png'},
 ];
 
 // Repeated so the strip has enough items to loop seamlessly at any width.
@@ -24,7 +25,7 @@ function LogoChip({label, src}: {label: string; src: string}): React.ReactElemen
 
 export default function TechLogos(): React.ReactElement {
   return (
-    <div className={styles.marqueeViewport} role="list" aria-label="Built on: TypeScript, Go, Swagger / OpenAPI, JSON, and Webhooks">
+    <div className={styles.marqueeViewport} role="list" aria-label="Built on: TypeScript, Go, Swagger / OpenAPI, JSON, Webhooks, and Asgardeo">
       <div className={styles.marqueeTrack} aria-hidden="true">
         {TRACK.map((item, i) => (
           <LogoChip key={`${item.key}-${i}`} label={item.label} src={item.src} />

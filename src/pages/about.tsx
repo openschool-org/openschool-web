@@ -16,7 +16,7 @@ const principles = [
   {
     icon: MapPinned,
     title: 'Built for the Sri Lankan System',
-    desc: 'Grades, terms, and A/L streams like Science, Commerce, and Arts are modeled the way local schools actually run.',
+    desc: 'The full Grade 1-13 flow - Scholarship years, O/Level, and A/Level streams like Science, Commerce, and Arts - modeled the way local schools actually run.',
   },
   {
     icon: Puzzle,
@@ -52,9 +52,9 @@ export default function About(): React.ReactElement {
           </h1>
           <p className={`os-lead ${styles.lead}`}>
             OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools -
-            a single, authenticated API that models everything from academic years and A/L streams
-            to guardians and daily attendance, so school records stop living across notebooks,
-            spreadsheets, and disconnected systems.
+            a single, authenticated API that models everything from academic years and grades -
+            Scholarship through A/Level - to guardians and daily attendance, so school records
+            stop living across notebooks, spreadsheets, and disconnected systems.
           </p>
         </div>
       </TornHeader>

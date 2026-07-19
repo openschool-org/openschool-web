@@ -20,7 +20,7 @@ const layerMeta: Record<FeatureGroup, {order: number; eyebrow: string; title: st
     order: 2,
     eyebrow: 'Layer 02 · Academic Structure',
     title: 'Academic Structure',
-    desc: 'How a school year is organized before a single student is enrolled — years, grades, subjects, and A/L streams.',
+    desc: 'How a school year is organized before a single student is enrolled — years, the full Grade 1-13 flow, subjects, and A/L streams.',
   },
   people: {
     order: 3,
