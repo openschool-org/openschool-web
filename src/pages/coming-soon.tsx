@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import {ArrowLeft, ArrowRight, Clock3} from 'lucide-react';
+import {ArrowLeft, ArrowRight, GraduationCap, UserRound, UsersRound} from 'lucide-react';
 import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
 import TornHeader from '@site/src/components/TornHeader';
@@ -30,19 +30,30 @@ export default function ComingSoon(): React.ReactElement {
 
       <TornHeader>
         <div className={styles.inner}>
-          <span className="os-badge">
-            <Clock3 size={13} strokeWidth={2.25} style={{marginRight: '-2px'}} />
-            In Development
-          </span>
           <h1 className={`os-heading ${styles.title}`}>
             The OpenSchool <span className="os-gradient-text">Dashboard</span> is on its way
           </h1>
           <p className={`os-lead ${styles.lead}`}>
             We&apos;re building the web app where principals, teachers, and guardians will log in
-            to manage academic years, classes, attendance, and more — powered by the same API
+            to manage academic years, classes, attendance, and more - powered by the same API
             you can already explore today. Leave your email and we&apos;ll let you know the
             moment it launches.
           </p>
+
+          <div className={styles.roles}>
+            <span className={styles.role}>
+              <UsersRound size={15} strokeWidth={2.25} />
+              Teachers
+            </span>
+            <span className={styles.role}>
+              <GraduationCap size={15} strokeWidth={2.25} />
+              Students
+            </span>
+            <span className={styles.role}>
+              <UserRound size={15} strokeWidth={2.25} />
+              Parents
+            </span>
+          </div>
 
           <form onSubmit={handleSubmit} className={styles.form}>
             <input
@@ -79,7 +90,7 @@ export default function ComingSoon(): React.ReactElement {
               height={480}
             />
             <div className={styles.artOverlay}>
-              <span className={styles.artBadge}>Preview — Coming Soon</span>
+              <span className={styles.artBadge}>Preview - Still In Development</span>
             </div>
           </div>
         </div>

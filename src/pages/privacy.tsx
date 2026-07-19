@@ -56,7 +56,7 @@ export default function Privacy(): React.ReactElement {
             <div className={`os-glass ${styles.article}`}>
               <p className={styles.lead}>
                 OpenSchool (&quot;OpenSchool&quot;, &quot;we&quot;, &quot;us&quot;) provides digital
-                infrastructure — academic records, attendance, guardians, and related tools — for
+                infrastructure — academic records, attendance, guardians, and related tools - for
                 schools in Sri Lanka. This policy explains what information we collect, how it is
                 used, and the choices available to schools, guardians, students, and visitors to
                 this website.
@@ -79,16 +79,16 @@ export default function Privacy(): React.ReactElement {
               <p>Depending on how you interact with us, we may collect:</p>
               <ul>
                 <li>
-                  <strong>Contact form data</strong> — name, school name, email address, and any
+                  <strong>Contact form data</strong> - name, school name, email address, and any
                   message you submit through the Contact page.
                 </li>
                 <li>
-                  <strong>School-entered records</strong> — academic years, grades, classes,
+                  <strong>School-entered records</strong> - academic years, grades, classes,
                   subjects, streams, student profiles, guardian details, teacher assignments, and
                   attendance entries that authorized school staff add to the platform.
                 </li>
                 <li>
-                  <strong>Technical data</strong> — basic, non-invasive web server logs (such as
+                  <strong>Technical data</strong> - basic, non-invasive web server logs (such as
                   page requests) needed to keep this website running securely.
                 </li>
               </ul>

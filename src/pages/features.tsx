@@ -23,8 +23,8 @@ export default function Features(): React.ReactElement {
             Twelve modules. <span className="os-gradient-text">One school system.</span>
           </h1>
           <p className={`os-lead ${styles.lead}`}>
-            Every capability your school office, teachers, and admin team need — from opening an
-            academic year to marking today&apos;s attendance — exposed through a secure, consistent
+            Every capability your school office, teachers, and admin team need - from opening an
+            academic year to marking today&apos;s attendance - exposed through a secure, consistent
             REST API.
           </p>
         </div>

@@ -21,6 +21,22 @@
   display: block;
   height: 34px;
   width: auto;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: var(--os-font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.brandNameOpen {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.brandNameSchool {
+  color: #a5a8ff;
 }
 
 .brandTagline {
@@ -76,18 +92,50 @@
   text-decoration: none;
 }
 
+/* Torn white paper strip that "covers" the bottom rights-reserved bar,
+   mirroring the torn-edge motif used where the dark hero band meets the
+   page below (see .os-torn-band / .os-torn-edge in custom.css) — but using
+   a dedicated combined asset with the doodles baked directly into the torn
+   cut, rather than layering two separate background-images. */
+.tornEdge {
+  height: 78px;
+  background-color: var(--os-dark-bg);
+  background-image: url('/img/patterns/torn-edge-footer-doodle.svg');
+  background-repeat: repeat-x;
+  background-size: 2000px 105px;
+  background-position: bottom;
+}
+
+.bottomWrap {
+  position: relative;
+  background: var(--os-bg);
+  overflow: hidden;
+}
+
+/* Same doodle pattern as the dark hero band, inverted to read as a black
+   doodle on this white torn strip instead of white-on-dark. */
+.bottomDoodle {
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/patterns/doodle-combined.svg');
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  filter: invert(1);
+  pointer-events: none;
+}
+
 .bottom {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 1.5rem 0 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0 1.75rem;
 }
 
 .copyright {
-  color: #6b7280;
+  color: var(--os-text-muted);
   font-size: 0.85rem;
 }
 
@@ -97,15 +145,38 @@
 }
 
 .legalLink {
-  color: #6b7280;
+  color: var(--os-text-muted);
   font-size: 0.85rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .legalLink:hover {
-  color: #d1d5db;
+  color: var(--os-text);
   text-decoration: none;
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--os-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.githubLink:hover {
+  color: var(--os-text);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .tornEdge {
+    height: 46px;
+    background-size: 1280px 68px;
+  }
 }
 
 @media (max-width: 768px) {

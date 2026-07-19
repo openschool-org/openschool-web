@@ -3,6 +3,7 @@
   grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
+  margin-top: clamp(1.5rem, 5vw, 3.5rem);
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
@@ -13,8 +14,10 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.75rem, 5.4vw, 5rem);
-  font-weight: 900;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.92);
   margin: 0 0 1.5rem;
 }
 
@@ -41,25 +44,30 @@
   z-index: -1;
 }
 
-.dashboardImg {
-  width: 100%;
-  height: auto;
-  border-radius: var(--os-radius-img);
-  box-shadow: var(--os-shadow-hover);
-  display: block;
-}
-
 .statBar {
   display: flex;
-  justify-content: space-between;
-  padding: var(--os-s-4);
-  max-width: 920px;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  padding: var(--os-s-4) var(--os-s-6);
+  max-width: 520px;
   margin: 0 auto;
 }
 
 .statItem {
   text-align: center;
-  flex: 1;
+  position: relative;
+}
+
+.statItem + .statItem::before {
+  content: '';
+  position: absolute;
+  left: calc(clamp(2.5rem, 6vw, 4.5rem) / -2);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 34px;
+  background: var(--os-border);
 }
 
 .statValue {
@@ -89,10 +97,25 @@
   margin: 0;
 }
 
-/* ---- Dark services panel ---- */
+/* ---- Dark services panel (full-bleed, edge-to-edge) ---- */
 
 .servicesPanel {
-  padding: clamp(2.5rem, 6vw, 4.5rem);
+  width: 100%;
+  border-radius: 0;
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.servicesPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 70% at 12% 0%, rgba(99, 102, 241, 0.16), transparent 65%),
+    radial-gradient(50% 60% at 100% 100%, rgba(99, 102, 241, 0.12), transparent 65%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .servicesIntro {
@@ -131,6 +154,7 @@
   transform: translateY(-4px);
   border-color: rgba(99, 102, 241, 0.5);
   background: #1a1a1a;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 .serviceIcon {
@@ -143,6 +167,12 @@
   background: rgba(99, 102, 241, 0.15);
   color: #a5a8ff;
   margin-bottom: var(--os-s-2);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
+}
+
+.serviceCard:hover .serviceIcon {
+  transform: scale(1.08) rotate(-4deg);
+  background: rgba(99, 102, 241, 0.25);
 }
 
 .serviceTitle {
@@ -164,15 +194,6 @@
 .techIntro {
   text-align: center;
   margin-bottom: var(--os-s-6);
-}
-
-.techRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--os-s-8);
-  row-gap: var(--os-s-4);
 }
 
 /* ---- About teaser ---- */

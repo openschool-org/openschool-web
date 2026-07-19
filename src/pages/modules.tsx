@@ -58,7 +58,7 @@ export default function Modules(): React.ReactElement {
             How the <span className="os-gradient-text">12 modules</span> build on each other
           </h1>
           <p className={`os-lead ${styles.lead}`}>
-            OpenSchool isn&apos;t 12 disconnected features — it&apos;s four layers that build on
+            OpenSchool isn&apos;t 12 disconnected features - it&apos;s four layers that build on
             one another: a secured foundation, the academic structure for a year, the people
             inside it, and the daily operations that run on top.
           </p>

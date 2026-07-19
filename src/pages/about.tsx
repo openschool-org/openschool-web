@@ -51,7 +51,7 @@ export default function About(): React.ReactElement {
             Replacing paper registers with <span className="os-gradient-text">one secure system</span>
           </h1>
           <p className={`os-lead ${styles.lead}`}>
-            OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools —
+            OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools -
             a single, authenticated API that models everything from academic years and A/L streams
             to guardians and daily attendance, so school records stop living across notebooks,
             spreadsheets, and disconnected systems.
@@ -67,15 +67,15 @@ export default function About(): React.ReactElement {
               <h3 className={styles.cardTitle}>Give every school a proper system of record</h3>
               <p className={styles.cardText}>
                 Most Sri Lankan schools still track students, grades, and attendance across paper
-                registers and disconnected spreadsheets. OpenSchool gives every school — regardless
-                of size — a structured, secure, API-driven system of record for its academic data.
+                registers and disconnected spreadsheets. OpenSchool gives every school - regardless
+                of size - a structured, secure, API-driven system of record for its academic data.
               </p>
             </div>
             <div className={`os-glass os-card ${styles.storyCard}`}>
               <span className="os-eyebrow">Our Vision</span>
               <h3 className={styles.cardTitle}>Infrastructure, not just software</h3>
               <p className={styles.cardText}>
-                We&apos;re building OpenSchool as infrastructure — a dependable API layer that other
+                We&apos;re building OpenSchool as infrastructure - a dependable API layer that other
                 school portals, parent apps, and reporting tools can be built on top of, instead of
                 every school reinventing student records from scratch.
               </p>

@@ -8,28 +8,25 @@ import Reveal from '@site/src/components/Reveal';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
 import TornHeader from '@site/src/components/TornHeader';
+import HeroCube from '@site/src/components/HeroCube';
+import TechLogos from '@site/src/components/TechLogos';
 import features from '@site/src/data/generated/features';
 import styles from './index.module.css';
 
 const stats = [
   {value: '12', label: 'Core Modules'},
-  {value: '100%', label: 'REST API Coverage'},
   {value: 'LK', label: 'Built for Sri Lanka'},
-  {value: '24/7', label: 'Bearer Token Secured'},
 ];
 
 const services = features.filter((f) => f.homeFeatured);
 
-const techItems = ['REST API', 'JSON', 'OAuth2 Bearer', 'HTTPS / TLS', 'Webhooks'];
-
 export default function Home(): React.ReactElement {
-  const dashboardSrc = useBaseUrl('img/illustrations/dashboard-live.svg');
   const aboutSrc = useBaseUrl('img/illustrations/about-illustration.svg');
 
   return (
     <Layout
       title="OpenSchool"
-      description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more — purpose-built for Sri Lankan schools.">
+      description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more purpose-built for Sri Lankan schools.">
       <SeoHead path="/" />
       <OsOrbs />
 
@@ -40,7 +37,7 @@ export default function Home(): React.ReactElement {
               One platform for your entire school&apos;s <span className="os-gradient-text">records</span>
             </h1>
             <p className={`os-lead ${styles.heroLead}`}>
-              Academic years, classes, students, guardians, and attendance — in one secure API.
+              Academic years, classes, students, guardians, and attendance - in one secure API.
               No more spreadsheets. No more paper registers.
             </p>
             <div className={styles.heroActions}>
@@ -55,13 +52,7 @@ export default function Home(): React.ReactElement {
 
           <div className={styles.heroArt}>
             <div className={styles.heroArtGlow} />
-            <img
-              src={dashboardSrc}
-              alt="OpenSchool dashboard showing student, class, and attendance statistics"
-              className={`${styles.dashboardImg} os-float`}
-              width={640}
-              height={480}
-            />
+            <HeroCube />
           </div>
         </div>
 
@@ -97,10 +88,10 @@ export default function Home(): React.ReactElement {
         </div>
       </section>
 
-      <section className="os-section os-section--tight">
-        <div className="os-container">
-          <Reveal>
-            <div className={`os-section--dark ${styles.servicesPanel}`}>
+      <section className="os-section--tight">
+        <Reveal>
+          <div className={`os-section--dark ${styles.servicesPanel}`}>
+            <div className="os-container">
               <div className={styles.servicesIntro}>
                 <span className="os-eyebrow">What We Automate</span>
                 <div className={styles.servicesIntroGrid}>
@@ -128,8 +119,8 @@ export default function Home(): React.ReactElement {
                 ))}
               </div>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="os-section os-section--tight">
@@ -140,13 +131,7 @@ export default function Home(): React.ReactElement {
                 Built On Open Standards
               </span>
             </div>
-            <div className={styles.techRow}>
-              {techItems.map((t) => (
-                <span key={t} className="os-tech-item">
-                  {t}
-                </span>
-              ))}
-            </div>
+            <TechLogos />
           </Reveal>
         </div>
       </section>
@@ -168,7 +153,7 @@ export default function Home(): React.ReactElement {
                 <p className={styles.aboutText}>
                   Most schools still track students, grades, and attendance across paper
                   registers and disconnected spreadsheets. OpenSchool gives every school a
-                  structured, secure, API-driven system of record — modeled around local grades,
+                  structured, secure, API-driven system of record - modeled around local grades,
                   A/L streams, and the people who keep a school running.
                 </p>
                 <Link className={styles.aboutLink} to="/about">
