@@ -334,6 +334,12 @@ p {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+body.os-navbar-dark .navbar-cta-button.navbar__link,
+body.os-navbar-dark .navbar-cta-button {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
 .navbar-cta-button.navbar__link:hover {
   transform: translateY(-1px);
   box-shadow: var(--os-shadow-btn-hover);
@@ -348,9 +354,10 @@ p {
   width: calc(100% - 32px);
   max-width: 1160px;
   border-radius: var(--os-radius-btn);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.48));
-  backdrop-filter: blur(28px) saturate(220%);
-  -webkit-backdrop-filter: blur(28px) saturate(220%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.3));
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  backdrop-filter: url(#os-liquid-glass) blur(9px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) inset, 0 -1px 12px rgba(255, 255, 255, 0.35) inset,
     0 18px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -392,6 +399,49 @@ p {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Instantly re-tints when the sticky navbar passes over a dark section
+   (the torn-paper header band or the footer) — no transition, a hard cut. */
+body.os-navbar-dark .navbar {
+  background: linear-gradient(180deg, rgba(40, 40, 46, 0.38), rgba(12, 12, 15, 0.4));
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.14) inset, 0 -1px 12px rgba(255, 255, 255, 0.05) inset,
+    0 18px 40px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.os-navbar-dark .navbar::before {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    rgba(255, 255, 255, 0.02) 55%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+body.os-navbar-dark .navbar__brand,
+body.os-navbar-dark .navbar__title,
+body.os-navbar-dark .navbar__link {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.os-navbar-dark .navbar__link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+body.os-navbar-dark .navbar__link--active:not(.navbar-cta-button) {
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.22);
+}
+
+body.os-navbar-dark .navbar__toggle {
+  color: #ffffff;
+}
+
+body.os-navbar-dark .navbar__items--right::before {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .navbar__inner {
@@ -585,9 +635,9 @@ p {
   padding-top: calc(var(--os-s-2) + 60px + var(--os-s-8));
   padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
   background-color: var(--os-dark-bg);
-  background-image: url('/img/patterns/doodle-pattern.svg');
+  background-image: url('/img/patterns/doodle-combined.svg');
   background-repeat: repeat;
-  background-size: 260px 260px;
+  background-size: 300px 300px;
   overflow: hidden;
   isolation: isolate;
 
@@ -641,20 +691,20 @@ p {
   right: 0;
   bottom: 0;
   height: 78px;
-  background-image: url('/img/torn-edge.svg');
+  background-image: url('/img/patterns/torn-edge-combined.svg');
   background-repeat: repeat-x;
-  background-size: 500px 105px;
+  background-size: 2000px 105px;
   background-position: bottom;
   pointer-events: none;
 }
 
 @media (max-width: 640px) {
   .os-torn-band {
-    background-size: 190px 190px;
+    background-size: 220px 220px;
   }
 
   .os-torn-edge {
     height: 46px;
-    background-size: 320px 68px;
+    background-size: 1280px 68px;
   }
 }

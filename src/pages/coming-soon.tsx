@@ -11,7 +11,7 @@ import styles from './coming-soon.module.css';
 const CONTACT_EMAIL = 'hello@openschool.lk';
 
 export default function ComingSoon(): React.ReactElement {
-  const dashboardSrc = useBaseUrl('img/dashboard-live.svg');
+  const dashboardSrc = useBaseUrl('img/illustrations/dashboard-live.svg');
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {

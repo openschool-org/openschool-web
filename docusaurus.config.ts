@@ -10,7 +10,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'OpenSchool',
   url: SITE_URL,
-  logo: `${SITE_URL}/img/logo-mark.png`,
+  logo: `${SITE_URL}/img/brand/logo-mark.png`,
   description:
     'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
   areaServed: 'LK',
@@ -26,7 +26,7 @@ const websiteJsonLd = {
 const config: Config = {
   title: 'OpenSchool',
   tagline: 'Digital Infrastructure for Sri Lankan Schools',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicons/favicon.ico',
 
   future: {
     v4: true,
@@ -40,18 +40,20 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  clientModules: [require.resolve('./src/clientModules/navbarAdaptive.ts')],
+
   headTags: [
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicon-32x32.png'},
+      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicons/favicon-32x32.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/img/favicon-16x16.png'},
+      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/img/favicons/favicon-16x16.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/img/apple-touch-icon.png'},
+      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/img/favicons/apple-touch-icon.png'},
     },
     {
       tagName: 'link',
@@ -100,7 +102,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/og-cover.png',
+    image: 'img/brand/og-cover.png',
     metadata: [
       {
         name: 'description',
@@ -118,7 +120,7 @@ const config: Config = {
     navbar: {
       logo: {
         alt: 'OpenSchool',
-        src: 'img/logo-wordmark.png',
+        src: 'img/brand/logo-wordmark.png',
         width: 78,
         height: 36,
       },
@@ -140,7 +142,7 @@ const config: Config = {
       style: 'dark',
       logo: {
         alt: 'OpenSchool',
-        src: 'img/logo-wordmark.png',
+        src: 'img/brand/logo-wordmark.png',
         width: 88,
         height: 41,
       },

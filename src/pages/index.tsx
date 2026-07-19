@@ -23,12 +23,12 @@ const services = features.filter((f) => f.homeFeatured);
 const techItems = ['REST API', 'JSON', 'OAuth2 Bearer', 'HTTPS / TLS', 'Webhooks'];
 
 export default function Home(): React.ReactElement {
-  const dashboardSrc = useBaseUrl('img/dashboard-live.svg');
-  const aboutSrc = useBaseUrl('img/about-illustration.svg');
+  const dashboardSrc = useBaseUrl('img/illustrations/dashboard-live.svg');
+  const aboutSrc = useBaseUrl('img/illustrations/about-illustration.svg');
 
   return (
     <Layout
-      title="Digital Infrastructure for Sri Lankan Schools"
+      title="OpenSchool"
       description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more — purpose-built for Sri Lankan schools.">
       <SeoHead path="/" />
       <OsOrbs />
