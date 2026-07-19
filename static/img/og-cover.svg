@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="55%" stop-color="#151233"/>
+      <stop offset="100%" stop-color="#0b0f1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.15" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.9" cy="0.85" r="0.6">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect x="80" y="80" width="1040" height="470" rx="32" fill="white" fill-opacity="0.045" stroke="white" stroke-opacity="0.14"/>
+  <rect x="120" y="150" width="64" height="64" rx="18" fill="url(#accent)"/>
+  <path d="M138 182C138 172.059 146.059 164 156 164C158.5 164 161 164.9 163 166.4" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M166 156C166 165.941 157.941 174 148 174C145.5 174 143.2 173.3 141 172" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <text x="200" y="200" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#f8fafc">OpenSchool</text>
+  <text x="120" y="280" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#f8fafc">Digital Infrastructure for</text>
+  <text x="120" y="335" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="url(#accent)">Sri Lankan Schools</text>
+  <text x="120" y="400" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#94a3b8">Academic Records · Attendance · Guardians · Streams · Secure API</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#cbd5e1">
+    <rect x="120" y="450" width="150" height="44" rx="22" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.16"/>
+    <text x="146" y="478">12 Modules</text>
+    <rect x="285" y="450" width="190" height="44" rx="22" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.16"/>
+    <text x="311" y="478">REST API + Auth</text>
+    <rect x="490" y="450" width="220" height="44" rx="22" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.16"/>
+    <text x="516" y="478">Built for Sri Lanka</text>
+  </g>
+</svg>
