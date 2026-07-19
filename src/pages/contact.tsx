@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import {Mail, MapPin, Clock, KeyRound} from 'lucide-react';
 import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
+import TornHeader from '@site/src/components/TornHeader';
 import styles from './contact.module.css';
 
 const CONTACT_EMAIL = 'hello@openschool.lk';
@@ -37,19 +38,17 @@ export default function Contact(): React.ReactElement {
       <SeoHead path="/contact" />
       <OsOrbs />
 
-      <header className="os-section">
-        <div className="os-container">
-          <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>
-              Let&apos;s bring <span className="os-gradient-text">OpenSchool</span> to your school
-            </h1>
-            <p className={`os-lead ${styles.lead}`}>
-              Whether you&apos;re a principal exploring a digital records system or a developer
-              requesting API access, tell us a bit about your school and we&apos;ll get back to you.
-            </p>
-          </div>
+      <TornHeader>
+        <div className={styles.introInner}>
+          <h1 className={`os-heading ${styles.title}`}>
+            Let&apos;s bring <span className="os-gradient-text">OpenSchool</span> to your school
+          </h1>
+          <p className={`os-lead ${styles.lead}`}>
+            Whether you&apos;re a principal exploring a digital records system or a developer
+            requesting API access, tell us a bit about your school and we&apos;ll get back to you.
+          </p>
         </div>
-      </header>
+      </TornHeader>
 
       <section className="os-section os-section--tight">
         <div className="os-container">

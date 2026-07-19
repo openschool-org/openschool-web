@@ -7,6 +7,7 @@ import OsOrbs from '@site/src/components/OsOrbs';
 import Reveal from '@site/src/components/Reveal';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
+import TornHeader from '@site/src/components/TornHeader';
 import features from '@site/src/data/generated/features';
 import styles from './index.module.css';
 
@@ -22,7 +23,7 @@ const services = features.filter((f) => f.homeFeatured);
 const techItems = ['REST API', 'JSON', 'OAuth2 Bearer', 'HTTPS / TLS', 'Webhooks'];
 
 export default function Home(): React.ReactElement {
-  const dashboardSrc = useBaseUrl('img/dashboard-mockup.svg');
+  const dashboardSrc = useBaseUrl('img/dashboard-live.svg');
   const aboutSrc = useBaseUrl('img/about-illustration.svg');
 
   return (
@@ -32,52 +33,49 @@ export default function Home(): React.ReactElement {
       <SeoHead path="/" />
       <OsOrbs />
 
-      <header className={styles.hero}>
-        <div className="os-container">
-          <div className={styles.heroGrid}>
-            <div className={styles.heroCopy}>
-              <h1 className={`os-heading ${styles.heroTitle}`}>
-                One platform for your entire school&apos;s records
-              </h1>
-              <p className={`os-lead ${styles.heroLead}`}>
-                OpenSchool centralizes academic years, classes, students, guardians, attendance,
-                and A/L streams into a single secure API — replacing scattered spreadsheets and
-                paper registers with one source of truth.
-              </p>
-              <div className={styles.heroActions}>
-                <Link className="os-btn os-btn--primary" to="/contact">
-                  Get Started
-                </Link>
-                <Link className="os-btn os-btn--ghost" to="/features">
-                  Explore Features
-                </Link>
-              </div>
-            </div>
-
-            <div className={styles.heroArt}>
-              <div className={styles.heroArtGlow} />
-              <img
-                src={dashboardSrc}
-                alt="OpenSchool dashboard showing student, class, and attendance statistics"
-                className={`${styles.dashboardImg} os-float`}
-                width={640}
-                height={480}
-              />
+      <TornHeader>
+        <div className={styles.heroGrid}>
+          <div className={styles.heroCopy}>
+            <h1 className={`os-heading ${styles.heroTitle}`}>
+              One platform for your entire school&apos;s <span className="os-gradient-text">records</span>
+            </h1>
+            <p className={`os-lead ${styles.heroLead}`}>
+              Academic years, classes, students, guardians, and attendance — in one secure API.
+              No more spreadsheets. No more paper registers.
+            </p>
+            <div className={styles.heroActions}>
+              <Link className="os-btn os-btn--primary" to="/contact">
+                Get Started
+              </Link>
+              <Link className="os-btn os-btn--ghost" to="/features">
+                Explore Features
+              </Link>
             </div>
           </div>
 
-          <Reveal>
-            <div className={`os-glass ${styles.statBar}`}>
-              {stats.map((s) => (
-                <div key={s.label} className={styles.statItem}>
-                  <div className={styles.statValue}>{s.value}</div>
-                  <div className={styles.statLabel}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div className={styles.heroArt}>
+            <div className={styles.heroArtGlow} />
+            <img
+              src={dashboardSrc}
+              alt="OpenSchool dashboard showing student, class, and attendance statistics"
+              className={`${styles.dashboardImg} os-float`}
+              width={640}
+              height={480}
+            />
+          </div>
         </div>
-      </header>
+
+        <Reveal>
+          <div className={`os-glass ${styles.statBar}`}>
+            {stats.map((s) => (
+              <div key={s.label} className={styles.statItem}>
+                <div className={styles.statValue}>{s.value}</div>
+                <div className={styles.statLabel}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </TornHeader>
 
       <section className="os-section">
         <div className="os-container">

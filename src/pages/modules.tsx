@@ -5,6 +5,7 @@ import {ArrowRight} from 'lucide-react';
 import OsOrbs from '@site/src/components/OsOrbs';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
+import TornHeader from '@site/src/components/TornHeader';
 import features, {type FeatureGroup} from '@site/src/data/generated/features';
 import styles from './modules.module.css';
 
@@ -51,20 +52,18 @@ export default function Modules(): React.ReactElement {
       <SeoHead path="/modules" />
       <OsOrbs />
 
-      <header className="os-section">
-        <div className="os-container">
-          <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>
-              How the <span className="os-gradient-text">12 modules</span> build on each other
-            </h1>
-            <p className={`os-lead ${styles.lead}`}>
-              OpenSchool isn&apos;t 12 disconnected features — it&apos;s four layers that build on
-              one another: a secured foundation, the academic structure for a year, the people
-              inside it, and the daily operations that run on top.
-            </p>
-          </div>
+      <TornHeader>
+        <div className={styles.introInner}>
+          <h1 className={`os-heading ${styles.title}`}>
+            How the <span className="os-gradient-text">12 modules</span> build on each other
+          </h1>
+          <p className={`os-lead ${styles.lead}`}>
+            OpenSchool isn&apos;t 12 disconnected features — it&apos;s four layers that build on
+            one another: a secured foundation, the academic structure for a year, the people
+            inside it, and the daily operations that run on top.
+          </p>
         </div>
-      </header>
+      </TornHeader>
 
       <section className="os-section os-section--tight">
         <div className="os-container">

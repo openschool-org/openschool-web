@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
+import TornHeader from '@site/src/components/TornHeader';
 import styles from './privacy.module.css';
 
 const EFFECTIVE_DATE = 'July 19, 2026';
@@ -30,15 +31,13 @@ export default function Privacy(): React.ReactElement {
       <SeoHead path="/privacy" />
       <OsOrbs />
 
-      <header className="os-section os-section--tight">
-        <div className="os-container">
-          <div className={styles.introInner}>
-            <span className="os-badge">Legal</span>
-            <h1 className={`os-heading ${styles.title}`}>Privacy Policy</h1>
-            <p className={styles.effective}>Effective {EFFECTIVE_DATE}</p>
-          </div>
+      <TornHeader>
+        <div className={styles.introInner}>
+          <span className="os-badge">Legal</span>
+          <h1 className={`os-heading ${styles.title}`}>Privacy Policy</h1>
+          <p className={styles.effective}>Effective {EFFECTIVE_DATE}</p>
         </div>
-      </header>
+      </TornHeader>
 
       <section className="os-section os-section--tight">
         <div className="os-container">

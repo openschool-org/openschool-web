@@ -5,6 +5,7 @@ import {ArrowRight, Check} from 'lucide-react';
 import OsOrbs from '@site/src/components/OsOrbs';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
+import TornHeader from '@site/src/components/TornHeader';
 import features from '@site/src/data/generated/features';
 import styles from './features.module.css';
 
@@ -16,20 +17,18 @@ export default function Features(): React.ReactElement {
       <SeoHead path="/features" />
       <OsOrbs />
 
-      <header className="os-section">
-        <div className="os-container">
-          <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>
-              Twelve modules. <span className="os-gradient-text">One school system.</span>
-            </h1>
-            <p className={`os-lead ${styles.lead}`}>
-              Every capability your school office, teachers, and admin team need — from opening an
-              academic year to marking today&apos;s attendance — exposed through a secure, consistent
-              REST API.
-            </p>
-          </div>
+      <TornHeader>
+        <div className={styles.introInner}>
+          <h1 className={`os-heading ${styles.title}`}>
+            Twelve modules. <span className="os-gradient-text">One school system.</span>
+          </h1>
+          <p className={`os-lead ${styles.lead}`}>
+            Every capability your school office, teachers, and admin team need — from opening an
+            academic year to marking today&apos;s attendance — exposed through a secure, consistent
+            REST API.
+          </p>
         </div>
-      </header>
+      </TornHeader>
 
       <section className="os-section os-section--tight">
         <div className="os-container">

@@ -40,8 +40,6 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  clientModules: [require.resolve('./src/clientModules/navbarScroll.ts')],
-
   headTags: [
     {
       tagName: 'link',
@@ -125,7 +123,7 @@ const config: Config = {
         height: 36,
       },
       items: [
-        {to: '/', label: 'Home', position: 'left'},
+        {to: '/', label: 'Home', position: 'left', exact: true},
         {to: '/about', label: 'About', position: 'left'},
         {to: '/features', label: 'Features', position: 'left'},
         {to: '/modules', label: 'Modules', position: 'left'},

@@ -339,7 +339,7 @@ p {
   box-shadow: var(--os-shadow-btn-hover);
 }
 
-/* ---------- Floating pill navbar (transparent → glass on scroll) ---------- */
+/* ---------- Floating pill navbar (one constant look, on any background) ---------- */
 
 .navbar {
   position: sticky;
@@ -348,28 +348,56 @@ p {
   width: calc(100% - 32px);
   max-width: 1160px;
   border-radius: var(--os-radius-btn);
-  background: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(0px) saturate(160%);
-  -webkit-backdrop-filter: blur(0px) saturate(160%);
-  border: 1px solid transparent;
-  box-shadow: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.48));
+  backdrop-filter: blur(28px) saturate(220%);
+  -webkit-backdrop-filter: blur(28px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) inset, 0 -1px 12px rgba(255, 255, 255, 0.35) inset,
+    0 18px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
   height: auto;
   min-height: 60px;
   padding: 0 var(--os-s-1);
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease,
-    backdrop-filter 0.35s ease;
+  z-index: 20;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-body.os-scrolled .navbar {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-color: var(--os-border);
-  box-shadow: var(--os-shadow-card);
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.15) 30%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .navbar__inner {
   max-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar__brand {
@@ -378,6 +406,11 @@ body.os-scrolled .navbar {
 
 .navbar__logo {
   margin-right: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar__brand:hover .navbar__logo {
+  transform: rotate(-6deg) scale(1.05);
 }
 
 .navbar__brand,
@@ -404,12 +437,13 @@ body.os-scrolled .navbar {
   background: rgba(17, 17, 17, 0.045);
 }
 
-.navbar__link--active {
+.navbar__link--active:not(.navbar-cta-button) {
   color: var(--os-text);
   font-weight: 600;
+  background: rgba(99, 102, 241, 0.08);
 }
 
-.navbar__link--active::after {
+.navbar__link--active:not(.navbar-cta-button)::after {
   content: '';
   position: absolute;
   left: 0.75rem;
@@ -422,6 +456,16 @@ body.os-scrolled .navbar {
 
 .navbar__toggle {
   color: var(--os-text);
+}
+
+/* Thin divider between the nav links and the CTA button */
+.navbar__items--right::before {
+  content: '';
+  width: 1px;
+  height: 22px;
+  background: var(--os-border);
+  margin-right: var(--os-s-2);
+  display: inline-block;
 }
 
 .navbar-sidebar {
@@ -531,4 +575,86 @@ body.os-scrolled .navbar {
 .os-tech-item:hover {
   opacity: 1;
   filter: grayscale(0.4);
+}
+
+/* ---------- Torn-paper header band (every page opens on this) ---------- */
+
+.os-torn-band {
+  position: relative;
+  margin-top: calc(-1 * (var(--os-s-2) + 60px));
+  padding-top: calc(var(--os-s-2) + 60px + var(--os-s-8));
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  background-color: var(--os-dark-bg);
+  background-image: url('/img/patterns/doodle-pattern.svg');
+  background-repeat: repeat;
+  background-size: 260px 260px;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Everything inside reads as light-on-dark, same trick as .os-section--dark */
+  --os-card-bg: var(--os-dark-card-bg);
+  --os-border-soft: var(--os-dark-border);
+  --os-border: var(--os-dark-border);
+  --os-text: var(--os-dark-text);
+  --os-text-muted: var(--os-dark-text-muted);
+  color: var(--os-dark-text);
+}
+
+.os-torn-band .os-eyebrow {
+  color: #a5a8ff;
+}
+
+.os-torn-band .os-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.os-torn-band .os-badge::before {
+  background: #a5a8ff;
+}
+
+.os-torn-band .os-btn--primary {
+  background: #ffffff;
+  color: #111111 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.os-torn-band .os-btn--primary:hover {
+  background: #f2f2f2;
+}
+
+.os-torn-band .os-btn--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff !important;
+}
+
+.os-torn-band .os-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.os-torn-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78px;
+  background-image: url('/img/torn-edge.svg');
+  background-repeat: repeat-x;
+  background-size: 500px 105px;
+  background-position: bottom;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .os-torn-band {
+    background-size: 190px 190px;
+  }
+
+  .os-torn-edge {
+    height: 46px;
+    background-size: 320px 68px;
+  }
 }
