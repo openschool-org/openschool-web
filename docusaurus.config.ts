@@ -35,7 +35,7 @@ const config: Config = {
   url: SITE_URL,
   baseUrl: '/',
 
-  organizationName: 'openschool-lk',
+  organizationName: 'openschool-org',
   projectName: 'openschool-web',
 
   onBrokenLinks: 'throw',
