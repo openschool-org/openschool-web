@@ -33,7 +33,7 @@ const config: Config = {
   },
 
   url: SITE_URL,
-  baseUrl: '/',
+  baseUrl: '/openschool-web/',
 
   organizationName: 'openschool-org',
   projectName: 'openschool-web',
@@ -45,19 +45,19 @@ const config: Config = {
   headTags: [
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicons/favicon-32x32.png'},
+      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/openschool-web/img/favicons/favicon-32x32.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/img/favicons/favicon-16x16.png'},
+      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/openschool-web/img/favicons/favicon-16x16.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/img/favicons/apple-touch-icon.png'},
+      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/openschool-web/img/favicons/apple-touch-icon.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'manifest', href: '/site.webmanifest'},
+      attributes: {rel: 'manifest', href: '/openschool-web/site.webmanifest'},
     },
     {
       tagName: 'meta',
