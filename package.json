@@ -1,9 +1,12 @@
 {
-  "name": "tmp-claude-1000-home-hasitha-erandika-documents-projects-openschool-web-9-d9-ad72-d-b7-d4-4896-85-ae-e02270-c095-e3-scratchpad-docusaurus-scaffold",
+  "name": "openschool-web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "generate:content": "node scripts/generate-content.mjs",
+    "prestart": "npm run generate:content",
+    "prebuild": "npm run generate:content",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -20,6 +23,8 @@
     "@docusaurus/preset-classic": "3.10.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.25.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

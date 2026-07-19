@@ -1,0 +1,90 @@
+.introInner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  margin: 1.25rem 0 1.25rem;
+}
+
+.lead {
+  max-width: 660px;
+  text-align: center;
+}
+
+.storyCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-family: var(--os-font-display);
+  font-size: 1.35rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.cardText {
+  color: var(--os-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.principleCard,
+.audienceCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.principleIcon,
+.audienceIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #eef0ff;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+}
+
+.principleTitle,
+.audienceTitle {
+  font-family: var(--os-font-display);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.principleDesc,
+.audienceDesc {
+  color: var(--os-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.ctaBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem;
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  color: var(--os-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .ctaBanner {
+    justify-content: center;
+    text-align: center;
+  }
+}

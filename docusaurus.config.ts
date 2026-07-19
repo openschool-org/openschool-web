@@ -3,23 +3,81 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const SITE_URL = 'https://openschool.lk';
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'OpenSchool',
+  url: SITE_URL,
+  logo: `${SITE_URL}/img/logo-mark.png`,
+  description:
+    'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
+  areaServed: 'LK',
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'OpenSchool',
+  url: SITE_URL,
+};
+
 const config: Config = {
   title: 'OpenSchool',
   tagline: 'Digital Infrastructure for Sri Lankan Schools',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon.ico',
 
   future: {
     v4: true,
   },
 
-  url: 'https://openschool.lk',
+  url: SITE_URL,
   baseUrl: '/',
 
   organizationName: 'openschool-lk',
   projectName: 'openschool-web',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+
+  clientModules: [require.resolve('./src/clientModules/navbarScroll.ts')],
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicon-32x32.png'},
+    },
+    {
+      tagName: 'link',
+      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/img/favicon-16x16.png'},
+    },
+    {
+      tagName: 'link',
+      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/img/apple-touch-icon.png'},
+    },
+    {
+      tagName: 'link',
+      attributes: {rel: 'manifest', href: '/site.webmanifest'},
+    },
+    {
+      tagName: 'meta',
+      attributes: {name: 'author', content: 'OpenSchool'},
+    },
+    {
+      tagName: 'meta',
+      attributes: {name: 'twitter:card', content: 'summary_large_image'},
+    },
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify(organizationJsonLd),
+    },
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify(websiteJsonLd),
+    },
+  ],
 
   i18n: {
     defaultLocale: 'en',
@@ -44,7 +102,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/og-cover.svg',
+    image: 'img/og-cover.png',
     metadata: [
       {
         name: 'description',
@@ -52,18 +110,19 @@ const config: Config = {
           'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
       },
       {name: 'keywords', content: 'OpenSchool, Sri Lanka, school management system, education API, student information system, attendance management'},
-      {name: 'theme-color', content: '#0b0f1a'},
+      {name: 'theme-color', content: '#fafafa'},
     ],
     colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'OpenSchool',
       logo: {
-        alt: 'OpenSchool Logo',
-        src: 'img/logo.svg',
+        alt: 'OpenSchool',
+        src: 'img/logo-wordmark.png',
+        width: 78,
+        height: 36,
       },
       items: [
         {to: '/', label: 'Home', position: 'left'},
@@ -81,6 +140,12 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'OpenSchool',
+        src: 'img/logo-wordmark.png',
+        width: 88,
+        height: 41,
+      },
       links: [
         {
           title: 'Platform',
@@ -91,21 +156,14 @@ const config: Config = {
           ],
         },
         {
-          title: 'Get Started',
+          title: 'Resources',
           items: [
             {label: 'Contact Us', to: '/contact'},
-            {label: 'Request API Access', to: '/contact'},
-          ],
-        },
-        {
-          title: 'Info',
-          items: [
-            {label: 'Built for Sri Lankan Schools', to: '/about'},
-            {label: 'Secure REST API', to: '/features'},
+            {label: 'Dashboard', to: '/coming-soon'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} OpenSchool. Digital Infrastructure for Sri Lankan Schools.`,
+      copyright: `© ${new Date().getFullYear()} OpenSchool. All rights reserved.`,
     },
   } satisfies Preset.ThemeConfig,
 };
