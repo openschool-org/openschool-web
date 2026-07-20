@@ -14,19 +14,19 @@ const layerMeta: Record<FeatureGroup, {order: number; eyebrow: string; title: st
     order: 1,
     eyebrow: 'Layer 01 · Foundation',
     title: 'Platform Foundation',
-    desc: 'The base every other module sits on — the school itself, and the security that guards its data.',
+    desc: 'The base every other module sits on - the school itself, and the security that guards its data.',
   },
   structure: {
     order: 2,
     eyebrow: 'Layer 02 · Academic Structure',
     title: 'Academic Structure',
-    desc: 'How a school year is organized before a single student is enrolled — years, the full Grade 1-13 flow, subjects, and A/L streams.',
+    desc: 'How a school year is organized before a single student is enrolled - years, the full Grade 1-13 flow, subjects, and A/L streams.',
   },
   people: {
     order: 3,
     eyebrow: 'Layer 03 · People & Classes',
     title: 'People & Classes',
-    desc: 'Where the academic structure meets real people — classes, the students in them, their teachers, and their guardians.',
+    desc: 'Where the academic structure meets real people - classes, the students in them, their teachers, and their guardians.',
   },
   operations: {
     order: 4,
@@ -78,14 +78,12 @@ export default function Modules(): React.ReactElement {
                   </div>
                   <div className={styles.moduleGrid}>
                     {layer.modules.map((m) => (
-                      <div key={m.slug} className={styles.moduleChip}>
+                      <div key={m.slug} className={`os-glass os-card ${styles.moduleCard}`}>
                         <span className={styles.moduleIconWrap}>
-                          <DynamicIcon name={m.icon} size={18} strokeWidth={1.75} />
+                          <DynamicIcon name={m.icon} size={20} strokeWidth={1.75} />
                         </span>
-                        <div>
-                          <div className={styles.moduleTitle}>{m.title}</div>
-                          <div className={styles.moduleDesc}>{m.summary}</div>
-                        </div>
+                        <div className={styles.moduleTitle}>{m.title}</div>
+                        <div className={styles.moduleDesc}>{m.summary}</div>
                       </div>
                     ))}
                   </div>
