@@ -27,7 +27,11 @@ export default function Home(): React.ReactElement {
     <Layout
       title="OpenSchool"
       description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more purpose-built for Sri Lankan schools.">
-      <SeoHead path="/" />
+      <SeoHead
+        path="/"
+        title="Digital Infrastructure for Sri Lankan Schools"
+        description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more purpose-built for Sri Lankan schools."
+      />
       <OsOrbs />
 
       <TornHeader>

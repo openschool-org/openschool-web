@@ -28,7 +28,11 @@ export default function Privacy(): React.ReactElement {
     <Layout
       title="Privacy Policy"
       description="How OpenSchool collects, uses, and protects data for schools, students, guardians, and website visitors.">
-      <SeoHead path="/privacy" />
+      <SeoHead
+        path="/privacy"
+        title="Privacy Policy"
+        description="How OpenSchool collects, uses, and protects data for schools, students, guardians, and website visitors."
+      />
       <OsOrbs />
 
       <TornHeader>
@@ -56,7 +60,7 @@ export default function Privacy(): React.ReactElement {
             <div className={`os-glass ${styles.article}`}>
               <p className={styles.lead}>
                 OpenSchool (&quot;OpenSchool&quot;, &quot;we&quot;, &quot;us&quot;) provides digital
-                infrastructure — academic records, attendance, guardians, and related tools - for
+                infrastructure - academic records, attendance, guardians, and related tools - for
                 schools in Sri Lanka. This policy explains what information we collect, how it is
                 used, and the choices available to schools, guardians, students, and visitors to
                 this website.

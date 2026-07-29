@@ -42,7 +42,11 @@ export default function About(): React.ReactElement {
     <Layout
       title="About"
       description="Why OpenSchool exists: a secure, API-first digital infrastructure platform built specifically for the way Sri Lankan schools operate.">
-      <SeoHead path="/about" />
+      <SeoHead
+        path="/about"
+        title="About Us - Purpose-Built School Infrastructure"
+        description="Why OpenSchool exists: a secure, API-first digital infrastructure platform built specifically for the way Sri Lankan schools operate."
+      />
       <OsOrbs />
 
       <TornHeader>

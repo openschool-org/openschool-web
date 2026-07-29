@@ -10,7 +10,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'OpenSchool',
   url: SITE_URL,
-  logo: `${SITE_URL}/img/brand/logo-mark.png`,
+  logo: `${SITE_URL}/img/brand/logo.png`,
   description:
     'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
   areaServed: 'LK',
@@ -39,7 +39,7 @@ const navbarGithubLinksHtml = `
 const config: Config = {
   title: 'OpenSchool',
   tagline: 'Digital Infrastructure for Sri Lankan Schools',
-  favicon: 'img/favicons/favicon.ico',
+  favicon: 'img/favicons/favicon.png',
 
   future: {
     v4: true,
@@ -58,15 +58,11 @@ const config: Config = {
   headTags: [
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/openschool-web/img/favicons/favicon-32x32.png'},
+      attributes: {rel: 'icon', type: 'image/png', href: '/openschool-web/img/favicons/favicon.png'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/openschool-web/img/favicons/favicon-16x16.png'},
-    },
-    {
-      tagName: 'link',
-      attributes: {rel: 'apple-touch-icon', sizes: '180x180', href: '/openschool-web/img/favicons/apple-touch-icon.png'},
+      attributes: {rel: 'apple-touch-icon', href: '/openschool-web/img/favicons/favicon.png'},
     },
     {
       tagName: 'link',
@@ -131,14 +127,14 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      // Used by the mobile sidebar header (always on a light background);
-      // the desktop navbar renders its own light/dark-adaptive mark — see
+      // Used by the mobile sidebar header;
+      // the desktop navbar renders its own logo — see
       // the swizzled src/theme/Navbar/Content.
       logo: {
         alt: 'OpenSchool',
-        src: 'img/brand/logo-mark-black.png',
-        width: 30,
-        height: 30,
+        src: 'img/brand/logo.png',
+        width: 40,
+        height: 40,
       },
       items: [
         {to: '/', label: 'Home', position: 'left', exact: true},
@@ -168,9 +164,9 @@ const config: Config = {
       style: 'dark',
       logo: {
         alt: 'OpenSchool',
-        src: 'img/brand/logo-mark-white.png',
-        width: 34,
-        height: 34,
+        src: 'img/brand/logo.png',
+        width: 36,
+        height: 36,
       },
       links: [
         {

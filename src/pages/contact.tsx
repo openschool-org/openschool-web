@@ -35,7 +35,11 @@ export default function Contact(): React.ReactElement {
     <Layout
       title="Contact"
       description="Get in touch about rolling out OpenSchool for your school, or request API access.">
-      <SeoHead path="/contact" />
+      <SeoHead
+        path="/contact"
+        title="Contact Us - Get Started or Request API Access"
+        description="Get in touch about rolling out OpenSchool for your school, or request API access."
+      />
       <OsOrbs />
 
       <TornHeader>

@@ -23,9 +23,13 @@ export default function ComingSoon(): React.ReactElement {
 
   return (
     <Layout
-      title="Dashboard — Coming Soon"
+      title="Dashboard - Coming Soon"
       description="The OpenSchool web dashboard for principals, teachers, and guardians is in development. Leave your email to be notified at launch.">
-      <SeoHead path="/coming-soon" />
+      <SeoHead
+        path="/coming-soon"
+        title="Dashboard - Coming Soon"
+        description="The OpenSchool web dashboard for principals, teachers, and guardians is in development. Leave your email to be notified at launch."
+      />
       <OsOrbs />
 
       <TornHeader>

@@ -12,17 +12,12 @@ import NavbarSearch from '@theme/Navbar/Search';
 
 import styles from './styles.module.css';
 
-// Custom brand mark: the glowing "S" mark (white export — reads well on
-// both the frosted-light and frosted-dark navbar glass), and "OpenSchool"
-// as live, two-toned text instead of a baked-in wordmark image, so it can
-// still adapt color as the navbar crosses light/dark sections (see
-// body.os-navbar-dark in custom.css and src/clientModules/navbarAdaptive.ts).
 function NavbarBrand(): ReactNode {
-  const mark = useBaseUrl('img/brand/logo-mark-white.png');
+  const mark = useBaseUrl('img/brand/logo.png');
   return (
     <Link to="/" className={clsx('navbar__brand', 'navbar-brand')}>
       <span className="navbar-brand-mark">
-        <img src={mark} className="navbar-brand-mark-img" alt="OpenSchool" width={30} height={30} />
+        <img src={mark} className="navbar-brand-mark-img" alt="OpenSchool" width={44} height={44} />
       </span>
       <span className="navbar-brand-text">
         <span className="navbar-brand-text-open">Open</span>

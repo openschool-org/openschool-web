@@ -49,7 +49,11 @@ export default function Modules(): React.ReactElement {
     <Layout
       title="Modules"
       description="A layered look at how OpenSchool's 12 modules build on each other, from the school profile up to daily attendance.">
-      <SeoHead path="/modules" />
+      <SeoHead
+        path="/modules"
+        title="Modules Architecture - Platform Layers"
+        description="A layered look at how OpenSchool's 12 modules build on each other, from the school profile up to daily attendance."
+      />
       <OsOrbs />
 
       <TornHeader>

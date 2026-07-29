@@ -14,7 +14,11 @@ export default function Features(): React.ReactElement {
     <Layout
       title="Features"
       description="12 integrated modules covering academic years, classes, students, guardians, attendance, streams, and secure API access.">
-      <SeoHead path="/features" />
+      <SeoHead
+        path="/features"
+        title="Features - 12 Integrated School Management Modules"
+        description="12 integrated modules covering academic years, classes, students, guardians, attendance, streams, and secure API access."
+      />
       <OsOrbs />
 
       <TornHeader>
