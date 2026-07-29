@@ -46,7 +46,7 @@ const config: Config = {
   },
 
   url: SITE_URL,
-  baseUrl: '/',
+  baseUrl: '/openschool-web/',
 
   organizationName: 'openschool-org',
   projectName: 'openschool-web',
@@ -58,15 +58,15 @@ const config: Config = {
   headTags: [
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/webp', href: '/img/favicons/favicon.webp'},
+      attributes: {rel: 'icon', type: 'image/webp', href: '/openschool-web/img/favicons/favicon.webp'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'apple-touch-icon', href: '/img/favicons/favicon.webp'},
+      attributes: {rel: 'apple-touch-icon', href: '/openschool-web/img/favicons/favicon.webp'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'manifest', href: '/site.webmanifest'},
+      attributes: {rel: 'manifest', href: '/openschool-web/site.webmanifest'},
     },
     {
       tagName: 'meta',
