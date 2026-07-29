@@ -10,7 +10,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'OpenSchool',
   url: SITE_URL,
-  logo: `${SITE_URL}/img/brand/logo.png`,
+  logo: `${SITE_URL}/img/brand/logo.webp`,
   description:
     'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
   areaServed: 'LK',
@@ -39,14 +39,14 @@ const navbarGithubLinksHtml = `
 const config: Config = {
   title: 'OpenSchool',
   tagline: 'Digital Infrastructure for Sri Lankan Schools',
-  favicon: 'img/favicons/favicon.png',
+  favicon: 'img/favicons/favicon.webp',
 
   future: {
     v4: true,
   },
 
   url: SITE_URL,
-  baseUrl: '/openschool-web/',
+  baseUrl: '/',
 
   organizationName: 'openschool-org',
   projectName: 'openschool-web',
@@ -58,15 +58,15 @@ const config: Config = {
   headTags: [
     {
       tagName: 'link',
-      attributes: {rel: 'icon', type: 'image/png', href: '/openschool-web/img/favicons/favicon.png'},
+      attributes: {rel: 'icon', type: 'image/webp', href: '/img/favicons/favicon.webp'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'apple-touch-icon', href: '/openschool-web/img/favicons/favicon.png'},
+      attributes: {rel: 'apple-touch-icon', href: '/img/favicons/favicon.webp'},
     },
     {
       tagName: 'link',
-      attributes: {rel: 'manifest', href: '/openschool-web/site.webmanifest'},
+      attributes: {rel: 'manifest', href: '/site.webmanifest'},
     },
     {
       tagName: 'meta',
@@ -132,7 +132,7 @@ const config: Config = {
       // the swizzled src/theme/Navbar/Content.
       logo: {
         alt: 'OpenSchool',
-        src: 'img/brand/logo.png',
+        src: 'img/brand/logo.webp',
         width: 40,
         height: 40,
       },
@@ -164,7 +164,7 @@ const config: Config = {
       style: 'dark',
       logo: {
         alt: 'OpenSchool',
-        src: 'img/brand/logo.png',
+        src: 'img/brand/logo.webp',
         width: 36,
         height: 36,
       },

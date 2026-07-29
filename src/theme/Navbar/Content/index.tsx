@@ -13,11 +13,11 @@ import NavbarSearch from '@theme/Navbar/Search';
 import styles from './styles.module.css';
 
 function NavbarBrand(): ReactNode {
-  const mark = useBaseUrl('img/brand/logo.png');
+  const mark = useBaseUrl('img/brand/logo.webp');
   return (
     <Link to="/" className={clsx('navbar__brand', 'navbar-brand')}>
       <span className="navbar-brand-mark">
-        <img src={mark} className="navbar-brand-mark-img" alt="OpenSchool" width={44} height={44} />
+        <img src={mark} className="navbar-brand-mark-img" alt="OpenSchool" width={44} height={44} decoding="async" fetchPriority="high" />
       </span>
       <span className="navbar-brand-text">
         <span className="navbar-brand-text-open">Open</span>

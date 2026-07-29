@@ -188,11 +188,28 @@
   font-size: 0.92rem;
 }
 
-/* ---- Tech / standards row ---- */
+.techSection {
+  background: var(--os-card-bg);
+  border: 1px solid var(--os-border-soft);
+  border-radius: var(--os-radius-lg);
+  padding: clamp(2rem, 4vw, 3rem) var(--os-s-4);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--os-shadow-card);
+}
+
+.techSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 80% at 50% 0%, rgba(10, 91, 242, 0.05), transparent 70%),
+    radial-gradient(60% 60% at 90% 100%, rgba(255, 124, 0, 0.04), transparent 70%);
+  pointer-events: none;
+}
 
 .techIntro {
   text-align: center;
-  margin-bottom: var(--os-s-6);
+  margin-bottom: var(--os-s-4);
 }
 
 /* ---- About teaser ---- */
