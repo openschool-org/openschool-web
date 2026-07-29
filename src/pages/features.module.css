@@ -30,8 +30,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: #eef0ff;
-  color: #4f46e5;
+  background: #eaf2ff;
+  color: var(--os-accent);
   margin-bottom: 1rem;
 }
 

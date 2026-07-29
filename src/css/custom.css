@@ -8,29 +8,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* ---- Palette ---- */
+  /* ---- Palette (Derived directly from OpenSchool Logo: Electric Blue #0a5bf2 & Warm Orange #ff7c00) ---- */
   --os-bg: #fafafa;
   --os-card-bg: #ffffff;
   --os-text: #111111;
   --os-text-muted: #666666;
   --os-border: #e5e7eb;
   --os-border-soft: #eaeaea;
-  --os-accent: #6366f1;
-  --os-accent-dark: #4f46e5;
+  --os-accent: #0a5bf2;
+  --os-accent-orange: #ff7c00;
+  --os-accent-dark: #0848c0;
   --os-dark-bg: #0b0b0b;
   --os-dark-card-bg: #151515;
   --os-dark-border: rgba(255, 255, 255, 0.1);
   --os-dark-text: #f5f5f5;
   --os-dark-text-muted: #9ca3af;
-  --os-gradient: linear-gradient(120deg, #6366f1 0%, #818cf8 50%, #4f46e5 100%);
+  --os-gradient: linear-gradient(120deg, #ff7c00 0%, #0a5bf2 100%);
 
-  --ifm-color-primary: #6366f1;
-  --ifm-color-primary-dark: #4f52ec;
-  --ifm-color-primary-darker: #4245ea;
-  --ifm-color-primary-darkest: #2e2ec4;
-  --ifm-color-primary-light: #7c7ff2;
-  --ifm-color-primary-lighter: #898cf3;
-  --ifm-color-primary-lightest: #b1b3f7;
+  --ifm-color-primary: #0a5bf2;
+  --ifm-color-primary-dark: #0952d9;
+  --ifm-color-primary-darker: #084dc4;
+  --ifm-color-primary-darkest: #073fad;
+  --ifm-color-primary-light: #2b73f4;
+  --ifm-color-primary-lighter: #3c7ef5;
+  --ifm-color-primary-lightest: #6e9ff7;
   --ifm-background-color: var(--os-bg) !important;
 
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -113,7 +114,7 @@ p {
   height: 46vw;
   top: -18vw;
   right: -10vw;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(10, 91, 242, 0.16), transparent 70%);
 }
 
 .os-bg-glow--2 {
@@ -121,7 +122,7 @@ p {
   height: 38vw;
   top: 30vh;
   left: -14vw;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 124, 0, 0.12), transparent 70%);
 }
 
 /* ---------- Reveal-on-scroll animation ---------- */
@@ -247,7 +248,7 @@ p {
 }
 
 .os-section--dark .os-eyebrow {
-  color: #a5a8ff;
+  color: #6e9ff7;
 }
 
 .os-heading {
@@ -510,7 +511,7 @@ body.os-navbar-dark .navbar-brand-text-open {
 }
 
 body.os-navbar-dark .navbar-brand-text-school {
-  color: #a5a8ff;
+  color: #ff7c00;
 }
 
 /* True full-bar centering for the nav links: a 3-column grid (brand |
@@ -762,7 +763,7 @@ body.os-navbar-dark .navbar-icon-link:hover {
   font-family: var(--os-font-display);
   font-weight: 800;
   font-size: 0.95rem;
-  color: #6366f1;
+  color: var(--os-accent);
   margin-bottom: var(--os-s-3);
   display: block;
 }
@@ -771,8 +772,8 @@ body.os-navbar-dark .navbar-icon-link:hover {
 
 .os-torn-band {
   position: relative;
-  margin-top: calc(-1 * (var(--os-s-2) + 60px));
-  padding-top: calc(var(--os-s-2) + 60px + var(--os-s-8));
+  margin-top: calc(-1 * (var(--os-s-2) + 68px));
+  padding-top: calc(var(--os-s-2) + 68px + var(--os-s-8));
   padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
   background-color: var(--os-dark-bg);
   background-image: url('/img/patterns/doodle-combined.svg');
@@ -785,13 +786,41 @@ body.os-navbar-dark .navbar-icon-link:hover {
   --os-card-bg: var(--os-dark-card-bg);
   --os-border-soft: var(--os-dark-border);
   --os-border: var(--os-dark-border);
+}
+
+.os-torn-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(70% 80% at 50% 0%, rgba(10, 91, 242, 0.18), transparent 70%),
+    radial-gradient(40% 50% at 85% 100%, rgba(255, 124, 0, 0.14), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.os-torn-band--tight {
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.os-torn-band--dark {
   --os-text: var(--os-dark-text);
   --os-text-muted: var(--os-dark-text-muted);
   color: var(--os-dark-text);
 }
 
+.os-torn-band .os-heading,
+.os-torn-band h1,
+.os-torn-band h2 {
+  color: #ffffff !important;
+}
+
+.os-torn-band .os-lead,
+.os-torn-band p {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
 .os-torn-band .os-eyebrow {
-  color: #a5a8ff;
+  color: #6e9ff7;
 }
 
 .os-torn-band .os-badge {
@@ -801,11 +830,11 @@ body.os-navbar-dark .navbar-icon-link:hover {
 }
 
 .os-torn-band .os-badge::before {
-  background: #a5a8ff;
+  background: #ff7c00;
 }
 
 .os-torn-band .os-gradient-text {
-  background-image: linear-gradient(120deg, #a5b4fc 0%, #818cf8 55%, #c7d2fe 100%);
+  background-image: linear-gradient(120deg, #ff7c00 0%, #6e9ff7 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }

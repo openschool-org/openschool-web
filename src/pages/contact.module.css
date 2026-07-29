@@ -63,7 +63,7 @@
 .input:focus,
 .textarea:focus {
   border-color: var(--os-accent);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(10, 91, 242, 0.15);
   background: #ffffff;
 }
 
@@ -87,8 +87,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #eef0ff;
-  color: #4f46e5;
+  background: #eaf2ff;
+  color: var(--os-accent);
   flex-shrink: 0;
 }
 
