@@ -1,9 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
-import TornHeader from '@site/src/components/TornHeader';
 import styles from './privacy.module.css';
 
 const EFFECTIVE_DATE = 'July 19, 2026';
@@ -33,15 +31,15 @@ export default function Privacy(): React.ReactElement {
         title="Privacy Policy"
         description="How OpenSchool collects, uses, and protects data for schools, students, guardians, and website visitors."
       />
-      <OsOrbs />
-
-      <TornHeader>
-        <div className={styles.introInner}>
-          <span className="os-badge">Legal</span>
-          <h1 className={`os-heading ${styles.title}`}>Privacy Policy</h1>
-          <p className={styles.effective}>Effective {EFFECTIVE_DATE}</p>
+      <header className="os-page-header">
+        <div className="os-container">
+          <div className={styles.introInner}>
+            <span className="os-badge">Legal</span>
+            <h1 className={`os-heading ${styles.title}`}>Privacy Policy</h1>
+            <p className={styles.effective}>Effective {EFFECTIVE_DATE}</p>
+          </div>
         </div>
-      </TornHeader>
+      </header>
 
       <section className="os-section os-section--tight">
         <div className="os-container">
@@ -57,7 +55,7 @@ export default function Privacy(): React.ReactElement {
               </ul>
             </nav>
 
-            <div className={`os-glass ${styles.article}`}>
+            <div className={`os-panel ${styles.article}`}>
               <p className={styles.lead}>
                 OpenSchool (&quot;OpenSchool&quot;, &quot;we&quot;, &quot;us&quot;) provides digital
                 infrastructure - academic records, attendance, guardians, and related tools - for

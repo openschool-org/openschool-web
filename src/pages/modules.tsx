@@ -2,10 +2,8 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {ArrowRight} from 'lucide-react';
-import OsOrbs from '@site/src/components/OsOrbs';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
-import TornHeader from '@site/src/components/TornHeader';
 import features, {type FeatureGroup} from '@site/src/data/generated/features';
 import styles from './modules.module.css';
 
@@ -54,27 +52,25 @@ export default function Modules(): React.ReactElement {
         title="Modules Architecture - Platform Layers"
         description="A layered look at how OpenSchool's 12 modules build on each other, from the school profile up to daily attendance."
       />
-      <OsOrbs />
-
-      <TornHeader>
-        <div className={styles.introInner}>
-          <h1 className={`os-heading ${styles.title}`}>
-            How the <span className="os-gradient-text">12 modules</span> build on each other
-          </h1>
-          <p className={`os-lead ${styles.lead}`}>
-            OpenSchool isn&apos;t 12 disconnected features - it&apos;s four layers that build on
-            one another: a secured foundation, the academic structure for a year, the people
-            inside it, and the daily operations that run on top.
-          </p>
+      <header className="os-page-header">
+        <div className="os-container">
+          <div className={styles.introInner}>
+            <h1 className={`os-heading ${styles.title}`}>How the 12 modules build on each other</h1>
+            <p className={`os-lead ${styles.lead}`}>
+              OpenSchool isn&apos;t 12 disconnected features - it&apos;s four layers that build on
+              one another: a secured foundation, the academic structure for a year, the people
+              inside it, and the daily operations that run on top.
+            </p>
+          </div>
         </div>
-      </TornHeader>
+      </header>
 
       <section className="os-section os-section--tight">
         <div className="os-container">
           <div className={styles.layerStack}>
             {layers.map((layer, i) => (
               <div key={layer.group} className={styles.layerRow}>
-                <div className={`os-glass ${styles.layerPanel}`}>
+                <div className={`os-panel ${styles.layerPanel}`}>
                   <div className={styles.layerHeader}>
                     <span className="os-eyebrow">{layer.eyebrow}</span>
                     <h2 className={styles.layerTitle}>{layer.title}</h2>
@@ -82,7 +78,7 @@ export default function Modules(): React.ReactElement {
                   </div>
                   <div className={styles.moduleGrid}>
                     {layer.modules.map((m) => (
-                      <div key={m.slug} className={`os-glass os-card ${styles.moduleCard}`}>
+                      <div key={m.slug} className={`os-card ${styles.moduleCard}`}>
                         <span className={styles.moduleIconWrap}>
                           <DynamicIcon name={m.icon} size={20} strokeWidth={1.75} />
                         </span>
@@ -101,7 +97,7 @@ export default function Modules(): React.ReactElement {
 
       <section className="os-section">
         <div className="os-container">
-          <div className={`os-glass-strong ${styles.ctaBanner}`}>
+          <div className={`os-panel ${styles.ctaBanner}`}>
             <div>
               <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>
                 Want the full capability list?

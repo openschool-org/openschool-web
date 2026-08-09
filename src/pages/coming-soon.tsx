@@ -3,9 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {ArrowLeft, ArrowRight, GraduationCap, UserRound, UsersRound} from 'lucide-react';
-import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
-import TornHeader from '@site/src/components/TornHeader';
 import styles from './coming-soon.module.css';
 
 const CONTACT_EMAIL = 'hello@openschool.lk';
@@ -30,13 +28,10 @@ export default function ComingSoon(): React.ReactElement {
         title="Dashboard - Coming Soon"
         description="The OpenSchool web dashboard for principals, teachers, and guardians is in development. Leave your email to be notified at launch."
       />
-      <OsOrbs />
-
-      <TornHeader>
+      <header className={styles.hero}>
+        <div className="os-container">
         <div className={styles.inner}>
-          <h1 className={`os-heading ${styles.title}`}>
-            The OpenSchool <span className="os-gradient-text">Dashboard</span> is on its way
-          </h1>
+          <h1 className={`os-heading ${styles.title}`}>The OpenSchool Dashboard is on its way</h1>
           <p className={`os-lead ${styles.lead}`}>
             We&apos;re building the web app where principals, teachers, and guardians will log in
             to manage academic years, classes, attendance, and more - powered by the same API
@@ -98,7 +93,8 @@ export default function ComingSoon(): React.ReactElement {
             </div>
           </div>
         </div>
-      </TornHeader>
+        </div>
+      </header>
     </Layout>
   );
 }

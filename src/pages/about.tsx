@@ -2,9 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {ShieldCheck, MapPinned, Puzzle, TrendingUp, Building2, Presentation, UsersRound, GraduationCap, ArrowRight} from 'lucide-react';
-import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
-import TornHeader from '@site/src/components/TornHeader';
 import styles from './about.module.css';
 
 const principles = [
@@ -47,26 +45,26 @@ export default function About(): React.ReactElement {
         title="About Us - Purpose-Built School Infrastructure"
         description="Why OpenSchool exists: a secure, API-first digital infrastructure platform built specifically for the way Sri Lankan schools operate."
       />
-      <OsOrbs />
-
-      <TornHeader>
-        <div className={styles.introInner}>
-          <h1 className={`os-heading ${styles.title}`}>
-            Replacing paper registers with <span className="os-gradient-text">one secure system</span>
-          </h1>
-          <p className={`os-lead ${styles.lead}`}>
-            OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools -
-            a single, authenticated API that models everything from academic years and grades -
-            Scholarship through A/Level - to guardians and daily attendance, so school records
-            stop living across notebooks, spreadsheets, and disconnected systems.
-          </p>
+      <header className="os-page-header">
+        <div className="os-container">
+          <div className={styles.introInner}>
+            <h1 className={`os-heading ${styles.title}`}>
+              Replacing paper registers with one secure system
+            </h1>
+            <p className={`os-lead ${styles.lead}`}>
+              OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools -
+              a single, authenticated API that models everything from academic years and grades -
+              Scholarship through A/Level - to guardians and daily attendance, so school records
+              stop living across notebooks, spreadsheets, and disconnected systems.
+            </p>
+          </div>
         </div>
-      </TornHeader>
+      </header>
 
       <section className="os-section os-section--tight">
         <div className="os-container">
           <div className="os-grid os-grid--2">
-            <div className={`os-glass os-card ${styles.storyCard}`}>
+            <div className={`os-card ${styles.storyCard}`}>
               <span className="os-eyebrow">Our Mission</span>
               <h3 className={styles.cardTitle}>Give every school a proper system of record</h3>
               <p className={styles.cardText}>
@@ -75,7 +73,7 @@ export default function About(): React.ReactElement {
                 of size - a structured, secure, API-driven system of record for its academic data.
               </p>
             </div>
-            <div className={`os-glass os-card ${styles.storyCard}`}>
+            <div className={`os-card ${styles.storyCard}`}>
               <span className="os-eyebrow">Our Vision</span>
               <h3 className={styles.cardTitle}>Infrastructure, not just software</h3>
               <p className={styles.cardText}>
@@ -88,13 +86,13 @@ export default function About(): React.ReactElement {
         </div>
       </section>
 
-      <section className="os-section">
+      <section className="os-section os-section--alt">
         <div className="os-container">
           <span className="os-eyebrow">What guides us</span>
           <h2 className="os-heading" style={{marginBottom: '2.5rem'}}>Principles behind the platform</h2>
           <div className="os-grid os-grid--4">
             {principles.map((p) => (
-              <div key={p.title} className={`os-glass os-card ${styles.principleCard}`}>
+              <div key={p.title} className={`os-card ${styles.principleCard}`}>
                 <div className={styles.principleIcon}>
                   <p.icon size={20} strokeWidth={1.75} />
                 </div>
@@ -112,7 +110,7 @@ export default function About(): React.ReactElement {
           <h2 className="os-heading" style={{marginBottom: '2.5rem'}}>Built for everyone around a school</h2>
           <div className="os-grid os-grid--4">
             {audiences.map((a) => (
-              <div key={a.title} className={`os-glass os-card ${styles.audienceCard}`}>
+              <div key={a.title} className={`os-card ${styles.audienceCard}`}>
                 <div className={styles.audienceIcon}>
                   <a.icon size={20} strokeWidth={1.75} />
                 </div>
@@ -126,7 +124,7 @@ export default function About(): React.ReactElement {
 
       <section className="os-section">
         <div className="os-container">
-          <div className={`os-glass-strong ${styles.ctaBanner}`}>
+          <div className={`os-panel ${styles.ctaBanner}`}>
             <div>
               <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>Want to see it fit your school?</h2>
               <p className={styles.ctaText}>Reach out and we&apos;ll walk you through the modules.</p>

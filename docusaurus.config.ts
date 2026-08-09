@@ -53,8 +53,6 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  clientModules: [require.resolve('./src/clientModules/navbarAdaptive.ts')],
-
   headTags: [
     {
       tagName: 'link',
@@ -119,7 +117,7 @@ const config: Config = {
           'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
       },
       {name: 'keywords', content: 'OpenSchool, Sri Lanka, school management system, education API, student information system, attendance management'},
-      {name: 'theme-color', content: '#fafafa'},
+      {name: 'theme-color', content: '#ffffff'},
     ],
     colorMode: {
       defaultMode: 'light',
@@ -182,6 +180,14 @@ const config: Config = {
           items: [
             {label: 'Contact Us', to: '/contact'},
             {label: 'Dashboard', to: '/coming-soon'},
+            {label: 'Privacy Policy', to: '/privacy'},
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {label: 'GitHub', href: GITHUB_URL},
+            {label: 'Report an Issue', href: `${GITHUB_URL}/issues`},
           ],
         },
       ],

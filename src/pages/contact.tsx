@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import Layout from '@theme/Layout';
 import {Mail, MapPin, Clock, KeyRound} from 'lucide-react';
-import OsOrbs from '@site/src/components/OsOrbs';
 import SeoHead from '@site/src/components/SeoHead';
-import TornHeader from '@site/src/components/TornHeader';
 import styles from './contact.module.css';
 
 const CONTACT_EMAIL = 'hello@openschool.lk';
@@ -40,24 +38,22 @@ export default function Contact(): React.ReactElement {
         title="Contact Us - Get Started or Request API Access"
         description="Get in touch about rolling out OpenSchool for your school, or request API access."
       />
-      <OsOrbs />
-
-      <TornHeader>
-        <div className={styles.introInner}>
-          <h1 className={`os-heading ${styles.title}`}>
-            Let&apos;s bring <span className="os-gradient-text">OpenSchool</span> to your school
-          </h1>
-          <p className={`os-lead ${styles.lead}`}>
-            Whether you&apos;re a principal exploring a digital records system or a developer
-            requesting API access, tell us a bit about your school and we&apos;ll get back to you.
-          </p>
+      <header className="os-page-header">
+        <div className="os-container">
+          <div className={styles.introInner}>
+            <h1 className={`os-heading ${styles.title}`}>Let&apos;s bring OpenSchool to your school</h1>
+            <p className={`os-lead ${styles.lead}`}>
+              Whether you&apos;re a principal exploring a digital records system or a developer
+              requesting API access, tell us a bit about your school and we&apos;ll get back to you.
+            </p>
+          </div>
         </div>
-      </TornHeader>
+      </header>
 
       <section className="os-section os-section--tight">
         <div className="os-container">
           <div className={styles.contactGrid}>
-            <div className={`os-glass ${styles.formPanel}`}>
+            <div className={`os-panel ${styles.formPanel}`}>
               <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.formRow}>
                   <label className={styles.label} htmlFor="name">
@@ -126,7 +122,7 @@ export default function Contact(): React.ReactElement {
 
             <div className={styles.sidePanel}>
               {channels.map((c) => (
-                <div key={c.title} className={`os-glass ${styles.channelCard}`}>
+                <div key={c.title} className={`os-card ${styles.channelCard}`}>
                   <div className={styles.channelIcon}>
                     <c.icon size={19} strokeWidth={1.75} />
                   </div>
@@ -142,7 +138,7 @@ export default function Contact(): React.ReactElement {
                   </div>
                 </div>
               ))}
-              <div className={`os-glass ${styles.channelCard}`}>
+              <div className={`os-card ${styles.channelCard}`}>
                 <div className={styles.channelIcon}>
                   <KeyRound size={19} strokeWidth={1.75} />
                 </div>

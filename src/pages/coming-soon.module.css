@@ -1,8 +1,6 @@
 .hero {
-  padding: clamp(6rem, 12vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
+  padding: clamp(3rem, 8vw, 5rem) 0 clamp(3rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--os-border);
 }
 
 .inner {
@@ -38,9 +36,9 @@
   gap: 0.4rem;
   padding: 0.4rem 0.85rem;
   border-radius: var(--os-radius-btn);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--os-bg);
+  border: 1px solid var(--os-border);
+  color: var(--os-text-muted);
   font-size: 0.82rem;
   font-weight: 600;
 }
@@ -119,13 +117,12 @@
 }
 
 .artBadge {
-  background: rgba(17, 17, 17, 0.85);
+  background: var(--os-text);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.85rem;
   padding: 0.6rem 1.2rem;
   border-radius: var(--os-radius-btn);
-  backdrop-filter: blur(6px);
 }
 
 @media (max-width: 640px) {
