@@ -1,20 +1,55 @@
-.introInner {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
   align-items: center;
 }
 
+.introInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .title {
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-size: clamp(2.1rem, 4vw, 3rem);
   margin: 1.25rem 0 1.25rem;
 }
 
 .lead {
-  max-width: 660px;
-  text-align: center;
+  text-align: left;
+}
+
+.introPhotoWrap {
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--os-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--os-border);
+  box-shadow: 0 1px 2px rgba(16, 17, 19, 0.04), 0 16px 40px -20px rgba(16, 17, 19, 0.28);
+}
+
+.introPhoto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+@media (max-width: 900px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .introInner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .lead {
+    text-align: center;
+  }
 }
 
 .storyCard {

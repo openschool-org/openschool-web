@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import {ArrowRight, Check} from 'lucide-react';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
@@ -8,6 +9,8 @@ import features from '@site/src/data/generated/features';
 import styles from './features.module.css';
 
 export default function Features(): React.ReactElement {
+  const introPhotoSrc = useBaseUrl('img/school/school4.webp');
+
   return (
     <Layout
       title="Features"
@@ -19,13 +22,24 @@ export default function Features(): React.ReactElement {
       />
       <header className="os-page-header">
         <div className="os-container">
-          <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>{features.length} modules. One school system.</h1>
-            <p className={`os-lead ${styles.lead}`}>
-              Every capability your school office, teachers, and admin team need - from opening an
-              academic year to marking today&apos;s attendance - built into one consistent admin,
-              teacher, student, and parent experience.
-            </p>
+          <div className={styles.introGrid}>
+            <div className={styles.introInner}>
+              <h1 className={`os-heading ${styles.title}`}>{features.length} modules. One school system.</h1>
+              <p className={`os-lead ${styles.lead}`}>
+                Every capability your school office, teachers, and admin team need - from opening
+                an academic year to marking today&apos;s attendance - built into one consistent
+                admin, teacher, student, and parent experience.
+              </p>
+            </div>
+            <div className={styles.introPhotoWrap}>
+              <img
+                src={introPhotoSrc}
+                alt="A teacher and students in a classroom in Sri Lanka"
+                className={styles.introPhoto}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </header>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import {ShieldCheck, MapPinned, Code, TrendingUp, Building2, Presentation, UsersRound, GraduationCap, ArrowRight} from 'lucide-react';
 import SeoHead from '@site/src/components/SeoHead';
 import styles from './about.module.css';
@@ -36,6 +37,8 @@ const audiences = [
 ];
 
 export default function About(): React.ReactElement {
+  const introPhotoSrc = useBaseUrl('img/school/school5.webp');
+
   return (
     <Layout
       title="About"
@@ -47,16 +50,27 @@ export default function About(): React.ReactElement {
       />
       <header className="os-page-header">
         <div className="os-container">
-          <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>
-              Replacing paper registers with one secure system
-            </h1>
-            <p className={`os-lead ${styles.lead}`}>
-              OpenSchool is a self-hosted school management system purpose-built for Sri Lankan
-              schools - one secure application that models everything from academic years and
-              grades - Scholarship through A/Level - to guardians and daily attendance, so school
-              records stop living across notebooks, spreadsheets, and disconnected systems.
-            </p>
+          <div className={styles.introGrid}>
+            <div className={styles.introInner}>
+              <h1 className={`os-heading ${styles.title}`}>
+                Replacing paper registers with one secure system
+              </h1>
+              <p className={`os-lead ${styles.lead}`}>
+                OpenSchool is a self-hosted school management system purpose-built for Sri Lankan
+                schools - one secure application that models everything from academic years and
+                grades - Scholarship through A/Level - to guardians and daily attendance, so school
+                records stop living across notebooks, spreadsheets, and disconnected systems.
+              </p>
+            </div>
+            <div className={styles.introPhotoWrap}>
+              <img
+                src={introPhotoSrc}
+                alt="Students at a morning assembly in a Sri Lankan school"
+                className={styles.introPhoto}
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </header>

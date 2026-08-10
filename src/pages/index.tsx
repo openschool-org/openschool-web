@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import {ArrowRight} from 'lucide-react';
+import {ArrowRight, Terminal, GitBranch, Bug, MessageCircle} from 'lucide-react';
 import Reveal from '@site/src/components/Reveal';
 import DynamicIcon from '@site/src/components/DynamicIcon';
 import SeoHead from '@site/src/components/SeoHead';
@@ -54,6 +54,39 @@ const badges = [
 
 const services = features.filter((f) => f.homeFeatured);
 
+type CommunityCard = {
+  icon: React.ComponentType<{size?: number; strokeWidth?: number}>;
+  title: string;
+  desc: string;
+  linkLabel: string;
+  linkTo?: string;
+  linkHref?: string;
+};
+
+const communityCards: CommunityCard[] = [
+  {
+    icon: GitBranch,
+    title: 'Contribute',
+    desc: 'Help shape OpenSchool by submitting features, fixes, or improvements.',
+    linkLabel: 'Local Development Setup',
+    linkTo: '/docs/contributing',
+  },
+  {
+    icon: Bug,
+    title: 'Report an Issue',
+    desc: 'Found a bug or have an idea? Open an issue and help make the platform better.',
+    linkLabel: 'Open an issue',
+    linkHref: `${GITHUB_URL}/issues`,
+  },
+  {
+    icon: MessageCircle,
+    title: 'Join the Discussion',
+    desc: 'Ask questions, share ideas, and talk with other people running OpenSchool.',
+    linkLabel: 'GitHub Discussions',
+    linkHref: `${GITHUB_URL}/discussions`,
+  },
+];
+
 const QUICK_START = `git clone https://github.com/openschool-org/openschool.git
 cd openschool
 
@@ -67,7 +100,9 @@ go run ./cmd/api/main.go
 cd ../frontend && pnpm install && pnpm dev`;
 
 export default function Home(): React.ReactElement {
-  const aboutSrc = useBaseUrl('img/illustrations/about-illustration.svg');
+  const heroPhotoSrc = useBaseUrl('img/school/school1.webp');
+  const aboutPhotoSrc1 = useBaseUrl('img/school/school2.webp');
+  const aboutPhotoSrc2 = useBaseUrl('img/school/school3.webp');
 
   return (
     <Layout
@@ -119,10 +154,16 @@ export default function Home(): React.ReactElement {
               </div>
             </div>
 
-            <div className={styles.heroCode}>
-              <CodeBlock language="bash" title="Run it locally">
-                {QUICK_START}
-              </CodeBlock>
+            <div className={styles.heroPhotoWrap}>
+              <img
+                src={heroPhotoSrc}
+                alt="Students at a Sri Lankan school"
+                className={styles.heroPhoto}
+                width={1536}
+                height={1024}
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </div>
 
@@ -140,18 +181,29 @@ export default function Home(): React.ReactElement {
       <section className="os-section os-section--tight">
         <div className="os-container">
           <Reveal>
-            <div className={`os-panel ${styles.aboutBanner}`}>
-              <div>
-                <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>
+            <div className={styles.quickstartGrid}>
+              <div className={styles.quickstartCopy}>
+                <span className="os-eyebrow">
+                  <Terminal size={14} strokeWidth={2.25} style={{verticalAlign: '-2px', marginRight: '0.4rem'}} />
+                  Quick Start
+                </span>
+                <h2 className={`os-heading ${styles.quickstartTitle}`}>
                   Ready to self-host OpenSchool for your school?
                 </h2>
-                <p className={styles.bannerText}>
-                  Follow the setup guide and have it running on your own infrastructure.
+                <p className={styles.quickstartText}>
+                  Clone the repo, start Postgres, and run the backend and frontend locally in a
+                  few commands. The setup guide walks through the rest - first-run admin
+                  registration, the school setup wizard, and every module hands-on.
                 </p>
+                <Link className="os-btn os-btn--primary" to="/docs/setup">
+                  Read the Setup Guide
+                </Link>
               </div>
-              <Link className="os-btn os-btn--primary" to="/docs/setup">
-                Read the Setup Guide
-              </Link>
+              <div className={styles.quickstartCode}>
+                <CodeBlock language="bash" title="Run it locally">
+                  {QUICK_START}
+                </CodeBlock>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -207,11 +259,10 @@ export default function Home(): React.ReactElement {
         <div className="os-container">
           <Reveal>
             <div className={styles.aboutGrid}>
-              <img
-                src={aboutSrc}
-                alt="Abstract illustration representing OpenSchool's structured student records"
-                className={styles.aboutImg}
-              />
+              <div className={styles.aboutPhotoGrid}>
+                <img src={aboutPhotoSrc1} alt="Students talking together at school" className={styles.aboutPhoto} loading="lazy" decoding="async" />
+                <img src={aboutPhotoSrc2} alt="Students playing together at school" className={styles.aboutPhoto} loading="lazy" decoding="async" />
+              </div>
               <div className={styles.aboutCopy}>
                 <span className="os-eyebrow">About OpenSchool</span>
                 <h2 className={`os-heading ${styles.aboutTitle}`}>
@@ -229,6 +280,54 @@ export default function Home(): React.ReactElement {
                   <ArrowRight size={16} strokeWidth={2.25} />
                 </Link>
               </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="os-section os-section--alt">
+        <div className="os-container">
+          <Reveal>
+            <div className={styles.communityIntro}>
+              <span className="os-eyebrow">Join the Community</span>
+              <h2 className={`os-heading ${styles.communityTitle}`}>
+                We&apos;re building OpenSchool with you
+              </h2>
+              <p className={styles.communityDesc}>
+                It&apos;s a volunteer-run, open-source project - no sales team, no support inbox.
+                Everything happens on GitHub.
+              </p>
+            </div>
+
+            <div className="os-grid os-grid--3">
+              {communityCards.map((c) => (
+                <div key={c.title} className={`os-card ${styles.communityCard}`}>
+                  <div className={styles.communityCardIcon}>
+                    <c.icon size={20} strokeWidth={1.75} />
+                  </div>
+                  <h3 className={styles.communityCardTitle}>{c.title}</h3>
+                  <p className={styles.communityCardDesc}>{c.desc}</p>
+                  {c.linkHref ? (
+                    <a
+                      className={styles.communityCardLink}
+                      href={c.linkHref}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      {c.linkLabel} <ArrowRight size={14} strokeWidth={2.25} />
+                    </a>
+                  ) : (
+                    <Link className={styles.communityCardLink} to={c.linkTo}>
+                      {c.linkLabel} <ArrowRight size={14} strokeWidth={2.25} />
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.communityMore}>
+              <Link to="/community">
+                See all the ways to get involved <ArrowRight size={15} strokeWidth={2.25} />
+              </Link>
             </div>
           </Reveal>
         </div>
