@@ -1,15 +1,13 @@
 ---
 title: Attendance Management
 icon: CalendarCheck
-order: 8
+order: 16
 group: operations
 homeFeatured: true
-summary: Sessions, marking, and summaries by student, class, or session.
+summary: Daily sessions for students and staff, with locking and guardian notifications.
 ---
 
-- Create attendance sessions
-- Mark attendance
-- View attendance by session
-- View attendance by student
-- Attendance summaries
-- View attendance sessions for classes
+- Per-class daily sessions: present/absent/late/excused
+- Sessions lock 24 hours after creation; admin override is audit-logged
+- Guardian notification on a newly-marked absence
+- Separate staff attendance covering teachers and non-academic staff

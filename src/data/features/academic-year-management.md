@@ -1,14 +1,13 @@
 ---
 title: Academic Year Management
 icon: Calendar
-order: 1
+order: 5
 group: structure
-homeFeatured: true
-summary: Create academic years, set the current one, and drill into every class tied to it.
+homeFeatured: false
+summary: Create academic years and flip exactly one to current - the scope almost every other module reads.
 ---
 
-- Create academic years
-- View all academic years
-- Set the current academic year
+- Create and list academic years
+- Set the single current academic year
+- View every class tied to a given year
 - Delete academic years
-- View classes belonging to an academic year

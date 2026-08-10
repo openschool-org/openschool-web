@@ -83,12 +83,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem 1.5rem;
+  flex-wrap: wrap;
   padding: 1rem 0;
 }
 
 .copyright {
   color: #9ca3af;
   font-size: 0.82rem;
+}
+
+.maintainedBy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+  font-size: 0.82rem;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+.maintainedBy:hover {
+  color: #ffffff;
+}
+
+.maintainedByLogo {
+  display: block;
+  height: 20px;
+  width: auto;
 }
 
 @media (max-width: 768px) {

@@ -1,13 +1,13 @@
 ---
-title: Stream Management (A/L Streams)
+title: Streams & Stream Groups
 icon: Waves
-order: 10
+order: 7
 group: structure
-homeFeatured: true
-summary: Model Science, Commerce, and Arts streams with grouped subjects such as Bio or Maths.
+homeFeatured: false
+summary: A/L streams and stream groups for Grade 12/13.
 ---
 
-- Model streams like Science, Commerce, and Arts
-- Create, update, delete, and view streams
-- Create stream groups (e.g. Bio, Maths)
-- Manage stream groups
+- Model streams like Physical Science, Bio Science, Commerce, Arts, Technology
+- Editable short codes and section counts (12-M1, 13-C1, …)
+- Stream groups for finer subject grouping (e.g. Physical vs. Bio Science)
+- Section Head / teacher-in-charge assignment per grade or grade+stream

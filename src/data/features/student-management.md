@@ -1,15 +1,12 @@
 ---
 title: Student Management
 icon: UserRound
-order: 5
+order: 10
 group: people
 homeFeatured: false
-summary: Student profiles, current class, and subject selections in one view.
+summary: Student profiles, enrollment, and an 8-tab detail view covering their full school record.
 ---
 
-- View all students
-- View individual student profiles
-- Update student information
-- Delete students
-- View student's current class
-- Manage subject selections
+- Profile, enrollment status, house, and up to 2 guardians per student
+- 8-tab detail view: Profile, Guardians, Subject Enrollment, Progress Reports, Activities, Leadership & Awards, Disciplinary, Records
+- Shared guardians supported for siblings

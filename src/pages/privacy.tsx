@@ -4,32 +4,28 @@ import Layout from '@theme/Layout';
 import SeoHead from '@site/src/components/SeoHead';
 import styles from './privacy.module.css';
 
-const EFFECTIVE_DATE = 'July 19, 2026';
-const CONTACT_EMAIL = 'hello@openschool.lk';
+const EFFECTIVE_DATE = 'August 10, 2026';
+const GITHUB_URL = 'https://github.com/openschool-org/openschool';
 
 const sections = [
   {id: 'overview', title: '1. Overview'},
-  {id: 'information-we-collect', title: '2. Information We Collect'},
-  {id: 'how-we-use-it', title: '3. How We Use Information'},
-  {id: 'student-guardian-data', title: '4. Student & Guardian Data'},
-  {id: 'security', title: '5. Data Storage & Security'},
-  {id: 'sharing', title: '6. Data Sharing'},
-  {id: 'cookies', title: '7. Cookies & Analytics'},
-  {id: 'retention', title: '8. Data Retention'},
-  {id: 'your-rights', title: '9. Your Rights'},
-  {id: 'changes', title: '10. Changes to This Policy'},
-  {id: 'contact', title: '11. Contact Us'},
+  {id: 'this-website', title: '2. This Website'},
+  {id: 'self-hosted-software', title: '3. The OpenSchool Software'},
+  {id: 'cookies', title: '4. Cookies & Analytics'},
+  {id: 'third-party-links', title: '5. Third-Party Links'},
+  {id: 'changes', title: '6. Changes to This Policy'},
+  {id: 'contact', title: '7. Contact'},
 ];
 
 export default function Privacy(): React.ReactElement {
   return (
     <Layout
       title="Privacy Policy"
-      description="How OpenSchool collects, uses, and protects data for schools, students, guardians, and website visitors.">
+      description="What this website collects (very little) and how the self-hosted OpenSchool software handles data on each deployment.">
       <SeoHead
         path="/privacy"
         title="Privacy Policy"
-        description="How OpenSchool collects, uses, and protects data for schools, students, guardians, and website visitors."
+        description="What this website collects (very little) and how the self-hosted OpenSchool software handles data on each deployment."
       />
       <header className="os-page-header">
         <div className="os-container">
@@ -57,132 +53,93 @@ export default function Privacy(): React.ReactElement {
 
             <div className={`os-panel ${styles.article}`}>
               <p className={styles.lead}>
-                OpenSchool (&quot;OpenSchool&quot;, &quot;we&quot;, &quot;us&quot;) provides digital
-                infrastructure - academic records, attendance, guardians, and related tools - for
-                schools in Sri Lanka. This policy explains what information we collect, how it is
-                used, and the choices available to schools, guardians, students, and visitors to
-                this website.
+                OpenSchool is free, open-source software that schools run on their own
+                infrastructure. This policy is short because there isn&apos;t much to say: this
+                site (openschool.lk) doesn&apos;t run a hosted service, doesn&apos;t operate on
+                anyone&apos;s behalf, and doesn&apos;t collect personal data from visitors. It
+                covers only what this website itself does.
               </p>
 
               <h2 id="overview" className={styles.h2}>
                 1. Overview
               </h2>
               <p>
-                This policy covers two kinds of data: information collected through this marketing
-                website (such as contact form submissions), and information a school enters into
-                the OpenSchool platform to manage its own students, staff, and records. Schools
-                remain the owner of their academic data; OpenSchool acts as the infrastructure
-                that stores and secures it on their behalf.
+                The OpenSchool project does not host, store, or process any school&apos;s
+                academic data, students&apos; or guardians&apos; information, or anyone&apos;s
+                login credentials. That data lives entirely inside each school&apos;s own,
+                independently deployed instance of the software (its own database, on its own
+                infrastructure), which the project has no access to. This policy therefore has
+                nothing to say about that data - it's governed by whatever policy the operator
+                of that specific instance sets, not by us.
               </p>
 
-              <h2 id="information-we-collect" className={styles.h2}>
-                2. Information We Collect
-              </h2>
-              <p>Depending on how you interact with us, we may collect:</p>
-              <ul>
-                <li>
-                  <strong>Contact form data</strong> - name, school name, email address, and any
-                  message you submit through the Contact page.
-                </li>
-                <li>
-                  <strong>School-entered records</strong> - academic years, grades, classes,
-                  subjects, streams, student profiles, guardian details, teacher assignments, and
-                  attendance entries that authorized school staff add to the platform.
-                </li>
-                <li>
-                  <strong>Technical data</strong> - basic, non-invasive web server logs (such as
-                  page requests) needed to keep this website running securely.
-                </li>
-              </ul>
-
-              <h2 id="how-we-use-it" className={styles.h2}>
-                3. How We Use Information
-              </h2>
-              <p>Information is used only to:</p>
-              <ul>
-                <li>Respond to inquiries submitted through the Contact page.</li>
-                <li>Provide, operate, and secure the OpenSchool platform for participating schools.</li>
-                <li>Maintain accurate academic, attendance, and guardian records on behalf of a school.</li>
-                <li>Improve the reliability and security of our infrastructure.</li>
-              </ul>
-              <p>We do not use school or student data for advertising, and we do not sell personal data.</p>
-
-              <h2 id="student-guardian-data" className={styles.h2}>
-                4. Student &amp; Guardian Data
+              <h2 id="this-website" className={styles.h2}>
+                2. This Website
               </h2>
               <p>
-                Where OpenSchool stores data relating to students and guardians, the school that
-                entered the data is the data controller, and OpenSchool acts as a data processor
-                on the school&apos;s instructions. Requests to access, correct, or remove a
-                student&apos;s or guardian&apos;s information should generally start with the
-                relevant school; we support schools in fulfilling those requests. We design our
-                data handling around the principles of Sri Lanka&apos;s Personal Data Protection
-                Act and comparable regional data protection standards.
+                This site is a static, informational page describing the OpenSchool project. It
+                has no accounts, no sign-in, and no form that collects your name, email, or any
+                other personal information. Whatever basic, non-invasive web server logs (such as
+                page requests) our hosting provider generates to keep the site running securely
+                are the extent of any technical data involved.
               </p>
 
-              <h2 id="security" className={styles.h2}>
-                5. Data Storage &amp; Security
+              <h2 id="self-hosted-software" className={styles.h2}>
+                3. The OpenSchool Software
               </h2>
               <p>
-                Access to the OpenSchool API is protected by bearer token authentication on
-                nearly every endpoint. We apply role-appropriate access controls so that staff can
-                only reach the records relevant to their school and responsibilities, and we
-                review our security practices as the platform evolves.
-              </p>
-
-              <h2 id="sharing" className={styles.h2}>
-                6. Data Sharing
-              </h2>
-              <p>
-                We do not sell personal data. We may share limited information with trusted
-                infrastructure providers (for example, hosting) strictly to operate the platform,
-                or when required to comply with a legal obligation. Any such provider is expected
-                to protect data to a standard consistent with this policy.
+                OpenSchool (the application) is self-hosted: anyone can deploy it, and whoever
+                does becomes the sole operator and controller of the data entered into that
+                instance - academic years, grades, classes, student and guardian records,
+                attendance, and everything else described on the{' '}
+                <Link to="/features">Features</Link> page. The project itself is not a party to that
+                relationship, does not have access to any deployed instance&apos;s database, and
+                does not act as a data processor for any school. If you&apos;re a student,
+                guardian, teacher, or staff member with a question about how your school&apos;s
+                specific instance handles your data, that question belongs with your school, not
+                with this project.
               </p>
 
               <h2 id="cookies" className={styles.h2}>
-                7. Cookies &amp; Analytics
+                4. Cookies &amp; Analytics
               </h2>
               <p>
-                This marketing website does not use third-party advertising cookies or trackers.
-                If we introduce analytics in the future to understand site usage, we will update
-                this policy to describe what is collected and how to opt out.
+                This website does not use advertising cookies, trackers, or third-party analytics.
+                If that changes in the future, this policy will be updated to describe what&apos;s
+                collected and how to opt out.
               </p>
 
-              <h2 id="retention" className={styles.h2}>
-                8. Data Retention
+              <h2 id="third-party-links" className={styles.h2}>
+                5. Third-Party Links
               </h2>
               <p>
-                Contact form submissions are retained only as long as needed to respond to your
-                inquiry. School records are retained for as long as a school actively uses the
-                platform, or as otherwise agreed with the school, after which they are deleted or
-                anonymized on request.
-              </p>
-
-              <h2 id="your-rights" className={styles.h2}>
-                9. Your Rights
-              </h2>
-              <p>
-                You may ask us what information we hold about you, request a correction, or
-                request deletion, subject to any school&apos;s own record-keeping obligations. To
-                make a request, contact us using the details below.
+                This site links out to GitHub (source code, issues, discussions, and security
+                advisories). Those pages are operated by GitHub, Inc. and governed by{' '}
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">
+                  GitHub&apos;s own privacy statement
+                </a>
+                , not this one.
               </p>
 
               <h2 id="changes" className={styles.h2}>
-                10. Changes to This Policy
+                6. Changes to This Policy
               </h2>
               <p>
-                We may update this policy as OpenSchool evolves. Material changes will update the
-                effective date at the top of this page.
+                This policy may be updated as the website changes. Material changes will update
+                the effective date at the top of this page.
               </p>
 
               <h2 id="contact" className={styles.h2}>
-                11. Contact Us
+                7. Contact
               </h2>
               <p>
-                Questions about this policy or your data can be sent to{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, or via our{' '}
-                <Link to="/contact">Contact page</Link>.
+                This is an open-source project without a support inbox. Questions about this site
+                are best raised as a{' '}
+                <a href={`${GITHUB_URL}/discussions`} target="_blank" rel="noopener noreferrer">
+                  GitHub Discussion
+                </a>
+                , or see the <Link to="/community">Community</Link> page for other ways to reach
+                the maintainers.
               </p>
             </div>
           </div>

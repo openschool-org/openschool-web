@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {ShieldCheck, MapPinned, Puzzle, TrendingUp, Building2, Presentation, UsersRound, GraduationCap, ArrowRight} from 'lucide-react';
+import {ShieldCheck, MapPinned, Code, TrendingUp, Building2, Presentation, UsersRound, GraduationCap, ArrowRight} from 'lucide-react';
 import SeoHead from '@site/src/components/SeoHead';
 import styles from './about.module.css';
 
@@ -9,7 +9,7 @@ const principles = [
   {
     icon: ShieldCheck,
     title: 'Secure by Default',
-    desc: 'Every endpoint sits behind bearer token authentication, so school data is never exposed to unauthenticated access.',
+    desc: 'ThunderID-backed authentication, server-side role checks on every action, rate limiting, and an audit log for sensitive changes.',
   },
   {
     icon: MapPinned,
@@ -17,14 +17,14 @@ const principles = [
     desc: 'The full Grade 1-13 flow - Scholarship years, O/Level, and A/Level streams like Science, Commerce, and Arts - modeled the way local schools actually run.',
   },
   {
-    icon: Puzzle,
-    title: 'API-First & Interoperable',
-    desc: 'A consistent REST API means OpenSchool can plug into portals, mobile apps, or reporting tools you already use.',
+    icon: Code,
+    title: 'Open Source & Self-Hosted',
+    desc: 'MIT licensed, with the full source available. Run your own instance on your own infrastructure and keep your data under your own control.',
   },
   {
     icon: TrendingUp,
     title: 'Built to Scale',
-    desc: 'From a single classroom to a multi-grade national school, the same data model holds up as records grow.',
+    desc: 'From a single classroom to a full multi-grade school, the same data model holds up as records grow.',
   },
 ];
 
@@ -39,11 +39,11 @@ export default function About(): React.ReactElement {
   return (
     <Layout
       title="About"
-      description="Why OpenSchool exists: a secure, API-first digital infrastructure platform built specifically for the way Sri Lankan schools operate.">
+      description="Why OpenSchool exists: a free, open-source, self-hosted school management system built specifically for the way Sri Lankan schools operate.">
       <SeoHead
         path="/about"
-        title="About Us - Purpose-Built School Infrastructure"
-        description="Why OpenSchool exists: a secure, API-first digital infrastructure platform built specifically for the way Sri Lankan schools operate."
+        title="About Us - Open Source School Management"
+        description="Why OpenSchool exists: a free, open-source, self-hosted school management system built specifically for the way Sri Lankan schools operate."
       />
       <header className="os-page-header">
         <div className="os-container">
@@ -52,10 +52,10 @@ export default function About(): React.ReactElement {
               Replacing paper registers with one secure system
             </h1>
             <p className={`os-lead ${styles.lead}`}>
-              OpenSchool is a digital infrastructure platform purpose-built for Sri Lankan schools -
-              a single, authenticated API that models everything from academic years and grades -
-              Scholarship through A/Level - to guardians and daily attendance, so school records
-              stop living across notebooks, spreadsheets, and disconnected systems.
+              OpenSchool is a self-hosted school management system purpose-built for Sri Lankan
+              schools - one secure application that models everything from academic years and
+              grades - Scholarship through A/Level - to guardians and daily attendance, so school
+              records stop living across notebooks, spreadsheets, and disconnected systems.
             </p>
           </div>
         </div>
@@ -75,11 +75,11 @@ export default function About(): React.ReactElement {
             </div>
             <div className={`os-card ${styles.storyCard}`}>
               <span className="os-eyebrow">Our Vision</span>
-              <h3 className={styles.cardTitle}>Infrastructure, not just software</h3>
+              <h3 className={styles.cardTitle}>Community infrastructure, not a vendor</h3>
               <p className={styles.cardText}>
-                We&apos;re building OpenSchool as infrastructure - a dependable API layer that other
-                school portals, parent apps, and reporting tools can be built on top of, instead of
-                every school reinventing student records from scratch.
+                We&apos;re building OpenSchool in the open, as software any school - or anyone
+                building for schools - can run, inspect, and contribute to, instead of every
+                school reinventing student records from scratch or depending on a closed vendor.
               </p>
             </div>
           </div>
@@ -126,11 +126,11 @@ export default function About(): React.ReactElement {
         <div className="os-container">
           <div className={`os-panel ${styles.ctaBanner}`}>
             <div>
-              <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>Want to see it fit your school?</h2>
-              <p className={styles.ctaText}>Reach out and we&apos;ll walk you through the modules.</p>
+              <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>Want to run it for your school?</h2>
+              <p className={styles.ctaText}>The setup guide walks through every module hands-on.</p>
             </div>
-            <Link className="os-btn os-btn--primary" to="/contact">
-              Contact Us
+            <Link className="os-btn os-btn--primary" to="/docs/setup">
+              Read the Setup Guide
               <ArrowRight size={17} strokeWidth={2.25} />
             </Link>
           </div>

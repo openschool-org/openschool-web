@@ -11,20 +11,20 @@ export default function Features(): React.ReactElement {
   return (
     <Layout
       title="Features"
-      description="12 integrated modules covering academic years, classes, students, guardians, attendance, streams, and secure API access.">
+      description={`${features.length} integrated modules covering academic years, classes, students, guardians, attendance, timetables, and more.`}>
       <SeoHead
         path="/features"
-        title="Features - 12 Integrated School Management Modules"
-        description="12 integrated modules covering academic years, classes, students, guardians, attendance, streams, and secure API access."
+        title={`Features - ${features.length} Integrated School Management Modules`}
+        description={`${features.length} integrated modules covering academic years, classes, students, guardians, attendance, timetables, and more.`}
       />
       <header className="os-page-header">
         <div className="os-container">
           <div className={styles.introInner}>
-            <h1 className={`os-heading ${styles.title}`}>Twelve modules. One school system.</h1>
+            <h1 className={`os-heading ${styles.title}`}>{features.length} modules. One school system.</h1>
             <p className={`os-lead ${styles.lead}`}>
               Every capability your school office, teachers, and admin team need - from opening an
-              academic year to marking today&apos;s attendance - exposed through a secure, consistent
-              REST API.
+              academic year to marking today&apos;s attendance - built into one consistent admin,
+              teacher, student, and parent experience.
             </p>
           </div>
         </div>

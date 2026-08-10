@@ -1,12 +1,13 @@
 ---
 title: School Management
 icon: Building2
-order: 2
+order: 1
 group: foundation
-homeFeatured: false
-summary: One authoritative school profile — create, view, and update core school information.
+homeFeatured: true
+summary: The school profile and the first-run Setup wizard that gets a fresh instance from empty to operational.
 ---
 
-- Create school profile
-- View school information
-- Update school information
+- Guided School Setup wizard: school details → houses → grades → classes → mediums
+- One authoritative school profile: name, address, contact info, inline logo
+- Editable grade range (1-13) the school runs
+- Resumable and idempotent - safe to skip steps and finish later from Settings

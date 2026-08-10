@@ -1,12 +1,13 @@
 ---
 title: Teacher Management
 icon: UserCog
-order: 9
+order: 11
 group: people
 homeFeatured: false
-summary: Form and subject teacher assignments across every class.
+summary: Teacher profiles, employment status, and position assignment.
 ---
 
-- Assign form teachers
-- Assign subject teachers
-- View teachers assigned to classes
+- Profile: title, gender, NIC, auto-assigned employee number
+- Employment status: active, resigned, transferred
+- House and in-app position assignment
+- Form and subject teacher assignment across classes

@@ -1,15 +1,13 @@
 ---
-title: Guardian (Parent) Management
+title: Guardian Management
 icon: UsersRound
-order: 6
+order: 12
 group: people
 homeFeatured: true
-summary: Guardians linked to students, with a primary contact set per student.
+summary: A searchable guardian directory with notification history and portal-login status.
 ---
 
-- Add guardians
-- Update guardian information
-- Link guardians to students
-- Remove guardian links
-- Set primary guardian/contact
-- View guardians for each student
+- Dedicated, searchable directory - not just inline on a student page
+- Notification history and portal-login status per guardian
+- Shared guardians across siblings, linked from each child's Guardians tab
+- Delete blocked while a guardian is still linked to a student

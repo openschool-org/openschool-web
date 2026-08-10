@@ -1,6 +1,23 @@
 .hero {
+  position: relative;
   border-bottom: 1px solid var(--os-border);
   padding: clamp(2.5rem, 6vw, 4rem) 0 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  pointer-events: none;
+}
+
+.hero :global(.os-container) {
+  position: relative;
+  z-index: 1;
 }
 
 .heroGrid {
@@ -30,26 +47,38 @@
 .heroActions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.githubLink {
-  display: inline-flex;
+.badgeRow {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--os-text);
-  text-decoration: none !important;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
-.githubLink:hover {
-  color: var(--os-accent);
+.badgeLink {
+  display: inline-flex;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.badgeLink:hover {
+  opacity: 1;
+}
+
+.badgeImg {
+  display: block;
+  height: 20px;
+  width: auto;
 }
 
 .heroCode {
   min-width: 0;
+  border-radius: var(--os-radius-lg);
+  box-shadow: 0 1px 2px rgba(16, 17, 19, 0.04), 0 16px 40px -20px rgba(16, 17, 19, 0.28);
 }
 
 .statBar {
@@ -240,6 +269,10 @@
   }
 
   .heroActions {
+    justify-content: center;
+  }
+
+  .badgeRow {
     justify-content: center;
   }
 

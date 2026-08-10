@@ -5,14 +5,16 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const SITE_URL = 'https://openschool.lk';
 
+const SITE_DESCRIPTION =
+  'OpenSchool is a free, open-source, self-hosted school management system built for Sri Lankan schools — covering academic years, students, guardians, attendance, timetables, and more.';
+
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'OpenSchool',
   url: SITE_URL,
   logo: `${SITE_URL}/img/brand/logo.webp`,
-  description:
-    'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
+  description: SITE_DESCRIPTION,
   areaServed: 'LK',
 };
 
@@ -95,7 +97,11 @@ const config: Config = {
     [
       'classic',
       {
-        docs: false,
+        docs: {
+          sidebarPath: './sidebars.ts',
+          routeBasePath: 'docs',
+          editUrl: 'https://github.com/openschool-org/openschool-web/edit/main/docs/',
+        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -108,15 +114,20 @@ const config: Config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
+  markdown: {
+    mermaid: true,
+  },
+
   themeConfig: {
     image: 'img/brand/og-cover.png',
     metadata: [
       {
         name: 'description',
-        content:
-          'OpenSchool is a secure, API-first digital infrastructure platform built for Sri Lankan schools — covering academic years, students, guardians, attendance, streams, and more.',
+        content: SITE_DESCRIPTION,
       },
-      {name: 'keywords', content: 'OpenSchool, Sri Lanka, school management system, education API, student information system, attendance management'},
+      {name: 'keywords', content: 'OpenSchool, open source, self-hosted, Sri Lanka, school management system, student information system, attendance management'},
       {name: 'theme-color', content: '#ffffff'},
     ],
     colorMode: {
@@ -139,20 +150,16 @@ const config: Config = {
         {to: '/about', label: 'About', position: 'left'},
         {to: '/features', label: 'Features', position: 'left'},
         {to: '/modules', label: 'Modules', position: 'left'},
-        {to: '/contact', label: 'Contact', position: 'left'},
+        {type: 'docSidebar', sidebarId: 'docs', label: 'Docs', position: 'left'},
+        {to: '/community', label: 'Community', position: 'left'},
         {
           type: 'html',
           position: 'right',
           value: navbarGithubLinksHtml,
         },
         {
-          to: '/coming-soon',
-          label: 'Try Login',
-          position: 'right',
-        },
-        {
-          to: '/contact',
-          label: 'Get in touch',
+          to: '/docs/intro',
+          label: 'Get Started',
           position: 'right',
           className: 'navbar-cta-button',
         },
@@ -178,20 +185,22 @@ const config: Config = {
         {
           title: 'Resources',
           items: [
-            {label: 'Contact Us', to: '/contact'},
-            {label: 'Dashboard', to: '/coming-soon'},
+            {label: 'Docs', to: '/docs/intro'},
+            {label: 'Community', to: '/community'},
             {label: 'Privacy Policy', to: '/privacy'},
           ],
         },
         {
-          title: 'Community',
+          title: 'Project',
           items: [
             {label: 'GitHub', href: GITHUB_URL},
             {label: 'Report an Issue', href: `${GITHUB_URL}/issues`},
+            {label: 'Security Policy', href: `${GITHUB_URL}/blob/main/SECURITY.md`},
+            {label: 'MIT License', href: `${GITHUB_URL}/blob/main/LICENSE`},
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} OpenSchool. All rights reserved.`,
+      copyright: `© ${new Date().getFullYear()} OpenSchool. Open source under the MIT License.`,
     },
   } satisfies Preset.ThemeConfig,
 };

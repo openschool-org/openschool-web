@@ -25,21 +25,46 @@ function GithubIcon(): React.ReactElement {
 }
 
 const stats = [
-  {value: '12', label: 'Core Modules'},
+  {value: '4', label: 'Role-Based Portals'},
   {value: 'LK', label: 'Built for Sri Lanka'},
+];
+
+const badges = [
+  {
+    label: 'Backend CI',
+    href: `${GITHUB_URL}/actions/workflows/backend-ci.yml`,
+    src: `${GITHUB_URL}/actions/workflows/backend-ci.yml/badge.svg`,
+  },
+  {
+    label: 'Frontend CI',
+    href: `${GITHUB_URL}/actions/workflows/frontend-ci.yml`,
+    src: `${GITHUB_URL}/actions/workflows/frontend-ci.yml/badge.svg`,
+  },
+  {
+    label: 'MIT License',
+    href: `${GITHUB_URL}/blob/main/LICENSE`,
+    src: 'https://img.shields.io/badge/license-MIT-blue.svg',
+  },
+  {
+    label: 'Contributor Covenant 2.1',
+    href: `${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`,
+    src: 'https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg',
+  },
 ];
 
 const services = features.filter((f) => f.homeFeatured);
 
-const API_SAMPLE = `curl https://api.openschool.lk/v1/classes/1A/attendance \\
-  -H "Authorization: Bearer <token>"
+const QUICK_START = `git clone https://github.com/openschool-org/openschool.git
+cd openschool
 
-{
-  "class": "1A",
-  "date": "2026-08-09",
-  "present": 41,
-  "absent": 2
-}`;
+# Postgres
+cd backend && docker compose up -d
+
+# Backend - migrations run automatically
+go run ./cmd/api/main.go
+
+# Frontend
+cd ../frontend && pnpm install && pnpm dev`;
 
 export default function Home(): React.ReactElement {
   const aboutSrc = useBaseUrl('img/illustrations/about-illustration.svg');
@@ -47,34 +72,30 @@ export default function Home(): React.ReactElement {
   return (
     <Layout
       title="OpenSchool"
-      description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more purpose-built for Sri Lankan schools.">
+      description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more — built for Sri Lankan schools.">
       <SeoHead
         path="/"
-        title="Digital Infrastructure for Sri Lankan Schools"
-        description="A secure, API-first platform covering academic years, students, guardians, attendance, streams, and more purpose-built for Sri Lankan schools."
+        title="Open Source School Management for Sri Lankan Schools"
+        description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more — built for Sri Lankan schools."
       />
 
       <header className={styles.hero}>
         <div className="os-container">
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <span className="os-badge">API-First &middot; Built for Sri Lanka</span>
               <h1 className={`os-heading ${styles.heroTitle}`}>
                 One platform for your entire school&apos;s records
               </h1>
               <p className={`os-lead ${styles.heroLead}`}>
-                Academic years, classes, students, guardians, and attendance - in one secure API.
-                No more spreadsheets. No more paper registers.
+                Academic years, classes, students, guardians, attendance, and timetables - in one
+                self-hosted system. No more spreadsheets. No more paper registers.
               </p>
               <div className={styles.heroActions}>
-                <Link className="os-btn os-btn--primary" to="/contact">
+                <Link className="os-btn os-btn--primary" to="/docs/intro">
                   Get Started
                 </Link>
-                <Link className="os-btn os-btn--ghost" to="/features">
-                  Explore Features
-                </Link>
                 <a
-                  className={styles.githubLink}
+                  className="os-btn os-btn--ghost"
                   href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer">
@@ -82,11 +103,25 @@ export default function Home(): React.ReactElement {
                   View on GitHub
                 </a>
               </div>
+
+              <div className={styles.badgeRow}>
+                {badges.map((b) => (
+                  <a
+                    key={b.label}
+                    href={b.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={b.label}
+                    className={styles.badgeLink}>
+                    <img src={b.src} alt={b.label} className={styles.badgeImg} loading="lazy" decoding="async" />
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div className={styles.heroCode}>
-              <CodeBlock language="bash" title="Attendance API">
-                {API_SAMPLE}
+              <CodeBlock language="bash" title="Run it locally">
+                {QUICK_START}
               </CodeBlock>
             </div>
           </div>
@@ -108,14 +143,14 @@ export default function Home(): React.ReactElement {
             <div className={`os-panel ${styles.aboutBanner}`}>
               <div>
                 <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>
-                  Ready to modernize your school&apos;s records?
+                  Ready to self-host OpenSchool for your school?
                 </h2>
                 <p className={styles.bannerText}>
-                  Talk to us about rolling out OpenSchool for your academic year.
+                  Follow the setup guide and have it running on your own infrastructure.
                 </p>
               </div>
-              <Link className="os-btn os-btn--primary" to="/contact">
-                Contact the Team
+              <Link className="os-btn os-btn--primary" to="/docs/setup">
+                Read the Setup Guide
               </Link>
             </div>
           </Reveal>
@@ -185,7 +220,7 @@ export default function Home(): React.ReactElement {
                 <p className={styles.aboutText}>
                   Most schools still track students, grades, and attendance across paper
                   registers and disconnected spreadsheets. OpenSchool gives every school a
-                  structured, secure, API-driven system of record - modeled around the full
+                  structured, secure, self-hosted system of record - modeled around the full
                   Grade 1-13 flow, from Scholarship years through O/Level and A/Level streams,
                   and the people who keep a school running.
                 </p>

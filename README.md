@@ -1,8 +1,10 @@
 # openschool-web
 
-Marketing site for OpenSchool — Digital Infrastructure for Sri Lankan Schools. Built with [Docusaurus](https://docusaurus.io).
+Public site for [OpenSchool](https://github.com/openschool-org/openschool) — a free, open-source, self-hosted school management system built for Sri Lankan schools. Built with [Docusaurus](https://docusaurus.io).
 
-Five pages: Home, About, Features, Modules, Contact. Feature/module copy lives in `src/data/features/*.md` (Markdown with frontmatter) and is compiled into `src/data/generated/features.ts` automatically before every `start`/`build` via `npm run generate:content` — edit the `.md` files, not the generated one.
+Six marketing pages (Home, About, Features, Modules, Community, Privacy) plus a real `/docs` section covering setup and architecture, sourced from `docs/*.md` and `docs/adr/*.md` (Docusaurus's docs plugin, configured via `sidebars.ts`).
+
+Feature/module copy on the Features/Modules pages lives in `src/data/features/*.md` (Markdown with frontmatter) and is compiled into `src/data/generated/features.ts` automatically before every `start`/`build` via `npm run generate:content` — edit the `.md` files, not the generated one. Keep it in sync with the source project's `docs/FEATURES.md`.
 
 ## Development
 
