@@ -152,6 +152,7 @@ const config: Config = {
         {to: '/modules', label: 'Modules', position: 'left'},
         {type: 'docSidebar', sidebarId: 'docs', label: 'Docs', position: 'left'},
         {to: '/community', label: 'Community', position: 'left'},
+        {to: '/changelog', label: 'Changelog', position: 'left'},
         {
           type: 'html',
           position: 'right',
@@ -187,6 +188,7 @@ const config: Config = {
           items: [
             {label: 'Docs', to: '/docs/intro'},
             {label: 'Community', to: '/community'},
+            {label: 'Changelog', to: '/changelog'},
             {label: 'Privacy Policy', to: '/privacy'},
           ],
         },
