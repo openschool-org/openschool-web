@@ -1,7 +1,7 @@
 ---
 title: Academic Records
 icon: FileText
-order: 17
+order: 18
 group: operations
 homeFeatured: false
 summary: Term marks and a full student portfolio - reports, activities, leadership, awards, discipline.

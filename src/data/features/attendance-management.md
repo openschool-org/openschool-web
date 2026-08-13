@@ -1,7 +1,7 @@
 ---
 title: Attendance Management
 icon: CalendarCheck
-order: 16
+order: 17
 group: operations
 homeFeatured: true
 summary: Daily sessions for students and staff, with locking and guardian notifications.

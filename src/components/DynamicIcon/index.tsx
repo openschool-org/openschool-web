@@ -21,6 +21,8 @@ import {
   CalendarClock,
   Bell,
   BarChart3,
+  Flag,
+  Bot,
   type LucideProps,
 } from 'lucide-react';
 import type {FeatureIcon} from '@site/src/data/generated/features';
@@ -47,6 +49,8 @@ const registry: Record<FeatureIcon, React.ComponentType<LucideProps>> = {
   CalendarClock,
   Bell,
   BarChart3,
+  Flag,
+  Bot,
 };
 
 type Props = LucideProps & {

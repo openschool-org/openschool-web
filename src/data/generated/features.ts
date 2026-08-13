@@ -18,12 +18,14 @@ export type FeatureIcon =
   | 'Briefcase'
   | 'House'
   | 'Trophy'
+  | 'Flag'
   | 'CalendarCheck'
   | 'FileText'
   | 'Shuffle'
   | 'CalendarClock'
   | 'Bell'
-  | 'BarChart3';
+  | 'BarChart3'
+  | 'Bot';
 
 export type FeatureGroup = 'foundation' | 'structure' | 'people' | 'operations';
 
@@ -262,10 +264,25 @@ const features: Feature[] = [
     ]
   },
   {
+    "slug": "societies",
+    "title": "Societies",
+    "icon": "Flag",
+    "order": 16,
+    "group": "people",
+    "homeFeatured": false,
+    "summary": "Clubs and societies with a teacher-in-charge and a five-role student roster, archived by year.",
+    "items": [
+      "Science Society, Interact/Leo Club, Scouts, and other clubs, each with an admin-assigned Teacher-in-Charge",
+      "Five-role student roster: Leader, Deputy Leader, Secretary, Treasurer, Member",
+      "Year-scoped, with the same read-only past-year archive view as the prefect board",
+      "Teacher-in-Charge manages their own society's roster from a \"My Society\" page; admins can manage any society"
+    ]
+  },
+  {
     "slug": "attendance-management",
     "title": "Attendance Management",
     "icon": "CalendarCheck",
-    "order": 16,
+    "order": 17,
     "group": "operations",
     "homeFeatured": true,
     "summary": "Daily sessions for students and staff, with locking and guardian notifications.",
@@ -280,7 +297,7 @@ const features: Feature[] = [
     "slug": "academic-records",
     "title": "Academic Records",
     "icon": "FileText",
-    "order": 17,
+    "order": 18,
     "group": "operations",
     "homeFeatured": false,
     "summary": "Term marks and a full student portfolio - reports, activities, leadership, awards, discipline.",
@@ -294,7 +311,7 @@ const features: Feature[] = [
     "slug": "promotion-class-reassignment",
     "title": "Promotion & Class Reassignment",
     "icon": "Shuffle",
-    "order": 18,
+    "order": 19,
     "group": "operations",
     "homeFeatured": true,
     "summary": "Preview-then-commit promotion between academic years, with marks-based or random auto-fill.",
@@ -309,7 +326,7 @@ const features: Feature[] = [
     "slug": "timetable",
     "title": "Timetable",
     "icon": "CalendarClock",
-    "order": 19,
+    "order": 20,
     "group": "operations",
     "homeFeatured": true,
     "summary": "A config → build → review → publish pipeline, one class at a time.",
@@ -324,7 +341,7 @@ const features: Feature[] = [
     "slug": "notifications",
     "title": "Notifications",
     "icon": "Bell",
-    "order": 20,
+    "order": 21,
     "group": "operations",
     "homeFeatured": true,
     "summary": "In-app notifications with role-scoped recipient targeting and a per-user Notification Center.",
@@ -339,7 +356,7 @@ const features: Feature[] = [
     "slug": "reports-analytics",
     "title": "Reports & Analytics",
     "icon": "BarChart3",
-    "order": 21,
+    "order": 22,
     "group": "operations",
     "homeFeatured": false,
     "summary": "PDF report export and an aggregate analytics dashboard.",
@@ -347,6 +364,21 @@ const features: Feature[] = [
       "PDF export: Attendance and Marks templates, admin-only",
       "Analytics dashboard: enrollment, attendance trends, performance, notification and timetable stats",
       "Rendered as stat tiles and lightweight charts, no charting library dependency"
+    ]
+  },
+  {
+    "slug": "automation",
+    "title": "Automation & Watchers",
+    "icon": "Bot",
+    "order": 23,
+    "group": "operations",
+    "homeFeatured": false,
+    "summary": "Scheduled background jobs that watch for data issues and nightly-back up the database, without sitting on any request's critical path.",
+    "items": [
+      "15 scheduled jobs covering nightly backups, data-consistency watchers, and cleanup tasks",
+      "Findings surface as dismissible banners on the relevant admin page, plus a central Automation panel",
+      "Every job independently toggleable except the nightly backup, which is always on",
+      "Runs on its own schedule or via an admin-triggered \"Run now\" - never as part of a page load"
     ]
   }
 ];

@@ -1,7 +1,7 @@
 ---
 title: Reports & Analytics
 icon: BarChart3
-order: 21
+order: 22
 group: operations
 homeFeatured: false
 summary: PDF report export and an aggregate analytics dashboard.

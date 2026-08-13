@@ -1,7 +1,7 @@
 ---
 title: Notifications
 icon: Bell
-order: 20
+order: 21
 group: operations
 homeFeatured: true
 summary: In-app notifications with role-scoped recipient targeting and a per-user Notification Center.

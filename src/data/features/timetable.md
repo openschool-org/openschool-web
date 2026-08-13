@@ -1,7 +1,7 @@
 ---
 title: Timetable
 icon: CalendarClock
-order: 19
+order: 20
 group: operations
 homeFeatured: true
 summary: A config → build → review → publish pipeline, one class at a time.
