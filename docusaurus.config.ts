@@ -198,11 +198,11 @@ const config: Config = {
             {label: 'GitHub', href: GITHUB_URL},
             {label: 'Report an Issue', href: `${GITHUB_URL}/issues`},
             {label: 'Security Policy', href: `${GITHUB_URL}/blob/main/SECURITY.md`},
-            {label: 'MIT License', href: `${GITHUB_URL}/blob/main/LICENSE`},
+            {label: 'Apache 2.0 License', href: `${GITHUB_URL}/blob/main/LICENSE`},
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} OpenSchool. Open source under the MIT License.`,
+      copyright: `© ${new Date().getFullYear()} OpenSchool. Open source under the Apache License 2.0.`,
     },
   } satisfies Preset.ThemeConfig,
 };

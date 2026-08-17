@@ -4,11 +4,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig, type MultiColumnFooter} from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
-const VERTEX_LABS_URL = 'https://vertexlabs.team';
-
 function Footer(): ReactNode {
   const {footer} = useThemeConfig();
-  const vertexLabsLogo = useBaseUrl('img/brand/vertexLabs-white.webp');
   if (!footer) {
     return null;
   }
@@ -60,14 +57,7 @@ function Footer(): ReactNode {
         <div className="os-container">
           <div className={styles.bottom}>
             <span className={styles.copyright}>{copyright}</span>
-            <a
-              className={styles.maintainedBy}
-              href={VERTEX_LABS_URL}
-              target="_blank"
-              rel="noopener noreferrer">
-              <span>Maintained by</span>
-              <img src={vertexLabsLogo} alt="Vertex Labs" className={styles.maintainedByLogo} />
-            </a>
+            <span className={styles.maintainedBy}>Maintained by open source contributors</span>
           </div>
         </div>
       </div>

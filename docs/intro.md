@@ -14,7 +14,7 @@ them. It's a monorepo with a Go REST API backend and a React (Carbon
 Design System) frontend, authenticating through
 [ThunderID](https://github.com/thunderid).
 
-It's free and open source under the [MIT License](https://github.com/openschool-org/openschool/blob/main/LICENSE) —
+It's free and open source under the [Apache License 2.0](https://github.com/openschool-org/openschool/blob/main/LICENSE) —
 you run your own instance, on your own infrastructure, and you own your
 data. There's no hosted version and no vendor relationship: OpenSchool
 doesn't operate a service on anyone's behalf.
@@ -47,7 +47,7 @@ capture the *why* behind the non-obvious choices.
 - **Questions, issues, and security reports:** see the
   [Community](/community) page.
 
-This project is started and maintained by [Vertex Labs](https://vertexlabs.team);
+This project is fully maintained and operated by open source contributors;
 see the
 [contributors graph](https://github.com/openschool-org/openschool/graphs/contributors)
-for everyone who's helped since.
+for everyone who's helped.

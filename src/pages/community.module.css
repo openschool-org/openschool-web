@@ -62,14 +62,3 @@
   text-decoration: underline;
 }
 
-.maintainerLink {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 1.75rem;
-}
-
-.maintainerLogo {
-  display: block;
-  height: 88px;
-  width: auto;
-}

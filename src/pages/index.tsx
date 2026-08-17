@@ -41,9 +41,9 @@ const badges = [
     src: `${GITHUB_URL}/actions/workflows/frontend-ci.yml/badge.svg`,
   },
   {
-    label: 'MIT License',
+    label: 'Apache 2.0 License',
     href: `${GITHUB_URL}/blob/main/LICENSE`,
-    src: 'https://img.shields.io/badge/license-MIT-blue.svg',
+    src: 'https://img.shields.io/badge/license-Apache%202.0-blue.svg',
   },
   {
     label: 'Contributor Covenant 2.1',

@@ -20,7 +20,7 @@ const principles = [
   {
     icon: Code,
     title: 'Open Source & Self-Hosted',
-    desc: 'MIT licensed, with the full source available. Run your own instance on your own infrastructure and keep your data under your own control.',
+    desc: 'Apache 2.0 licensed, with the full source available. Run your own instance on your own infrastructure and keep your data under your own control.',
   },
   {
     icon: TrendingUp,

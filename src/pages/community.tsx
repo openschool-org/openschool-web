@@ -1,13 +1,11 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import {GitBranch, MessageCircle, Bug, ShieldAlert, type LucideProps} from 'lucide-react';
 import SeoHead from '@site/src/components/SeoHead';
 import styles from './community.module.css';
 
 const GITHUB_URL = 'https://github.com/openschool-org/openschool';
-const VERTEX_LABS_URL = 'https://vertexlabs.team';
 
 type Channel = {
   icon: React.ComponentType<LucideProps>;
@@ -50,7 +48,6 @@ const channels: Channel[] = [
 ];
 
 export default function Community(): React.ReactElement {
-  const vertexLabsLogo = useBaseUrl('img/brand/vertexLabs.webp');
   return (
     <Layout
       title="Community"
@@ -108,21 +105,12 @@ export default function Community(): React.ReactElement {
           <span className="os-eyebrow">Maintainers</span>
           <h2 className="os-heading" style={{marginBottom: '0.5rem'}}>Started and maintained by</h2>
           <p className={styles.channelValue}>
-            This project is started and maintained by Vertex Labs, and has grown with everyone
-            who&apos;s contributed since - see the{' '}
+            This project is fully maintained and operated by open source contributors - see the{' '}
             <a href={`${GITHUB_URL}/graphs/contributors`} target="_blank" rel="noopener noreferrer">
               contributors graph
             </a>
             .
           </p>
-          <a
-            className={styles.maintainerLink}
-            href={VERTEX_LABS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Vertex Labs">
-            <img src={vertexLabsLogo} alt="Vertex Labs" className={styles.maintainerLogo} />
-          </a>
         </div>
       </section>
     </Layout>
