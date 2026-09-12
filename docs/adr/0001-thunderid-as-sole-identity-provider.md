@@ -28,7 +28,7 @@ which implements `identity.Provider`.
 ## Consequences
 
 - **A running ThunderID instance is a hard dependency.** There is no
-  degraded/offline authentication mode — if ThunderID is unreachable,
+  degraded/offline authentication mode - if ThunderID is unreachable,
   sign-in and account provisioning both fail.
 - **Swapping identity providers again is possible but not free.** A new
   provider needs its own `identity.Provider` implementation plus a
@@ -40,7 +40,7 @@ which implements `identity.Provider`.
   silently at runtime with a generic error rather than at build/test
   time. This is the direct reason
   [ADR 0002](./0002-in-app-position-layer) chose *not* to add new IDP
-  roles for the position hierarchy — every new IDP-side string is a
+  roles for the position hierarchy - every new IDP-side string is a
   repeat of this exact risk. See the project's `audit.md` findings on
   `AssignRole` failure handling for where this fragility has caused real
   bugs.

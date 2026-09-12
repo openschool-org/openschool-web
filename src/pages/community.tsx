@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {GitBranch, MessageCircle, Bug, ShieldAlert, type LucideProps} from 'lucide-react';
+import {GitBranch, MessageCircle, Bug, ShieldAlert, HeartHandshake, Scale, type LucideProps} from 'lucide-react';
 import SeoHead from '@site/src/components/SeoHead';
 import styles from './community.module.css';
 
@@ -20,8 +20,8 @@ const channels: Channel[] = [
   {
     icon: GitBranch,
     title: 'Contribute',
-    desc: 'Set up the dev environment and open a PR against the development branch - see the Local Development Setup guide and the repo\'s CONTRIBUTING.md for the full workflow.',
-    linkLabel: 'Local Development Setup',
+    desc: 'Get the dev environment running from the Setup Walkthrough, then see the Contributing guide for coding standards and branch/PR conventions.',
+    linkLabel: 'Read the Contributing Guide',
     linkTo: '/docs/contributing',
   },
   {
@@ -44,6 +44,20 @@ const channels: Channel[] = [
     desc: 'Please don\'t open a public issue for a vulnerability. Use GitHub\'s private vulnerability reporting (Security tab → Report a vulnerability) instead.',
     linkLabel: 'Read the Security Policy',
     linkHref: `${GITHUB_URL}/blob/main/SECURITY.md`,
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Code of Conduct',
+    desc: 'OpenSchool follows the Contributor Covenant. By participating in the project - code, issues, discussions - you agree to abide by it.',
+    linkLabel: 'Read the Code of Conduct',
+    linkTo: '/docs/code-of-conduct',
+  },
+  {
+    icon: Scale,
+    title: 'License',
+    desc: 'OpenSchool is free and open source software, licensed under the Apache License 2.0.',
+    linkLabel: 'Read the License',
+    linkHref: `${GITHUB_URL}/blob/main/LICENSE`,
   },
 ];
 

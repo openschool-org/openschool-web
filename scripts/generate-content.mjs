@@ -39,7 +39,7 @@ function generateFeatures() {
 
   items.sort((a, b) => a.order - b.order);
 
-  const banner = '// GENERATED FILE — do not edit directly.\n// Source of truth: src/data/features/*.md\n// Regenerate with `npm run generate:content`.\n\n';
+  const banner = '// GENERATED FILE - do not edit directly.\n// Source of truth: src/data/features/*.md\n// Regenerate with `npm run generate:content`.\n\n';
 
   const body = `export type FeatureIcon =
 ${[...new Set(items.map((i) => `  | '${i.icon}'`))].join('\n')};
@@ -202,7 +202,7 @@ async function generateChangelog() {
     }
   }
 
-  const banner = `// GENERATED FILE — do not edit directly.\n// Source of truth: the GitHub Releases API for ${CHANGELOG_OWNER}/${CHANGELOG_REPO}, cached at src/data/changelog-cache.json.\n// Regenerate with \`npm run generate:content\`.\n\n`;
+  const banner = `// GENERATED FILE - do not edit directly.\n// Source of truth: the GitHub Releases API for ${CHANGELOG_OWNER}/${CHANGELOG_REPO}, cached at src/data/changelog-cache.json.\n// Regenerate with \`npm run generate:content\`.\n\n`;
 
   const body = `export type ChangelogBlock =
   | {type: 'paragraph'; text: string}

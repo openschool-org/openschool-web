@@ -6,7 +6,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['intro', 'contributing', 'thunderid', 'setup'],
+      items: ['intro', 'contributing', 'code-of-conduct', 'thunderid', 'setup'],
     },
     {
       type: 'category',

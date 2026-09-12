@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const SITE_URL = 'https://openschool.lk';
 
 const SITE_DESCRIPTION =
-  'OpenSchool is a free, open-source, self-hosted school management system built for Sri Lankan schools — covering academic years, students, guardians, attendance, timetables, and more.';
+  'OpenSchool is a free, open-source, self-hosted school management system built for Sri Lankan schools - covering academic years, students, guardians, attendance, timetables, and more.';
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -137,7 +137,7 @@ const config: Config = {
     },
     navbar: {
       // Used by the mobile sidebar header;
-      // the desktop navbar renders its own logo — see
+      // the desktop navbar renders its own logo - see
       // the swizzled src/theme/Navbar/Content.
       logo: {
         alt: 'OpenSchool',
@@ -149,7 +149,6 @@ const config: Config = {
         {to: '/', label: 'Home', position: 'left', exact: true},
         {to: '/about', label: 'About', position: 'left'},
         {to: '/features', label: 'Features', position: 'left'},
-        {to: '/modules', label: 'Modules', position: 'left'},
         {type: 'docSidebar', sidebarId: 'docs', label: 'Docs', position: 'left'},
         {to: '/community', label: 'Community', position: 'left'},
         {to: '/changelog', label: 'Changelog', position: 'left'},
@@ -180,7 +179,6 @@ const config: Config = {
           items: [
             {label: 'About', to: '/about'},
             {label: 'Features', to: '/features'},
-            {label: 'Modules', to: '/modules'},
           ],
         },
         {

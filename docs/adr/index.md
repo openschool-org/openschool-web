@@ -6,7 +6,7 @@ description: Significant design decisions, their context, and their known tradeo
 ---
 
 An ADR captures a significant design decision, the context that drove it,
-and its known tradeoffs — so it doesn't get silently relitigated or
+and its known tradeoffs - so it doesn't get silently relitigated or
 "fixed" by someone who wasn't there for the original reasoning. These are
 short and status-tracked, not a design essay; see
 [Architecture](../architecture) for how the pieces they describe fit into
@@ -27,5 +27,5 @@ behavior.
 
 Copy the format of an existing one: **Status**, **Context**, **Decision**,
 **Consequences**. Number sequentially, never renumber or delete a
-superseded record — mark its status `Superseded by NNNN` instead and add
+superseded record - mark its status `Superseded by NNNN` instead and add
 the new one.

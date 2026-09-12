@@ -107,11 +107,11 @@ export default function Home(): React.ReactElement {
   return (
     <Layout
       title="OpenSchool"
-      description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more — built for Sri Lankan schools.">
+      description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more - built for Sri Lankan schools.">
       <SeoHead
         path="/"
         title="Open Source School Management for Sri Lankan Schools"
-        description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more — built for Sri Lankan schools."
+        description="A free, open-source, self-hosted school management system covering academic years, students, guardians, attendance, timetables, and more - built for Sri Lankan schools."
       />
 
       <header className={styles.hero}>
