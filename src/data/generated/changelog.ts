@@ -26,6 +26,98 @@ export type ChangelogRelease = {
 
 const changelog: ChangelogRelease[] = [
   {
+    "slug": "v0.2.0",
+    "version": "v0.2.0",
+    "name": "OpenSchool v0.2.0",
+    "date": "2026-09-15",
+    "tag": "v0.2.0",
+    "prerelease": false,
+    "githubUrl": "https://github.com/openschool-org/openschool/releases/tag/v0.2.0",
+    "summary": "This release delivers a major backend architecture refactor and improves the project's reliability, developer experience, and documentation. The backend is now organised as a modular monolith, with each feature owning its routes, business logic, database access, and API contracts. It also adds broader integration testing, stronger CI checks, and fixes API compatibility issues found in the frontend.",
+    "contributors": [
+      "chamals3n4",
+      "HasithaErandika"
+    ],
+    "sections": [
+      {
+        "heading": "Added",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "NIC-based default passwords for teacher/guardian accounts and index-number defaults for students, plus a universal self-service password reset and forced first-login password change.",
+              "Class medium (language of instruction) support, wired into the setup wizard and promotion's auto-distribution logic.",
+              "Analytics dashboard (student/staff/academic/school-wide aggregates) and PDF report export (attendance, marks).",
+              "Staff management: non-academic staff records, staff attendance, and an expanded student profile portfolio (progress reports, activities, leadership roles, awards, disciplinary records).",
+              "In-app position/leadership hierarchy (Principal, Vice Principal, Section Head, Class Teacher, Subject Teacher) layered on top of the base ThunderID roles, with position-scoped notification permissions and a role-differentiated teacher dashboard.",
+              "Academic year promotion and class reassignment, including marks-based and random auto-distribution assist tools.",
+              "Full timetable module: settings, grade sections, classrooms, subject period requirements, teacher availability, and a draft → validate → submit → review → approve/publish workflow.",
+              "In-app notification system with role/position-scoped recipient targeting and a per-user notification center.",
+              "Guardian directory with search, shared-guardian linking, and orphan filtering.",
+              "House colors and a self-balancing (least-populated-house) assignment algorithm for students and staff.",
+              "Audit log for sensitive changes (house reassignment, attendance-lock overrides).",
+              "Attendance session locking (24h) with admin override, and guardian absence notifications.",
+              "First-run onboarding: one-time admin registration and a guided School Setup wizard (school profile, houses, grades, classes, mediums).",
+              "Switched identity provider integration to ThunderID (previously Asgardeo), behind a provider-neutral internal/identity.Provider seam."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Changed",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Completed the backend modular-monolith refactor. Each feature now owns its HTTP routes, business logic, database adapter, and API contracts. The old shared handler, service, repository, model, and route layers were removed.",
+              "API-wide per-IP rate limiting (previously limited to the first-run admin registration endpoint only).",
+              "Database connection pool sizing tuned for expected load."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Fixed",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Broken access control on attendance and term-marks endpoints.",
+              "Two N+1 query patterns in list endpoints, batched.",
+              "Swagger UI no longer served outside development builds.",
+              "Restored the snake_case JSON API fields used by class and curriculum screens."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Testing",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Added isolated PostgreSQL integration coverage for every backend module and added the suite to backend CI."
+          }
+        ]
+      },
+      {
+        "heading": "Documentation",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Added docs/FEATURES.md, the current as-built feature reference.",
+              "Added docs/ARCHITECTURE.md and docs/adr/ (Architecture Decision Records) for significant, easy-to-relitigate design decisions.",
+              "Added audit.md, a standing code-quality and security audit with tracked severity/status.",
+              "Added SECURITY.md, CODE_OF_CONDUCT.md, and this changelog.",
+              "Corrected stale claims in docs/SETUP.md (teacher dashboard mock-data note; the \"starting over\" TRUNCATE TABLE table list, which was missing ~20 tables added by later migrations).",
+              "Added backend and frontend README files, refreshed the root README and contributor guide, and simplified environment example files."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "v0.1.0",
     "version": "v0.1.0",
     "name": "OpenSchool v0.1.0",
